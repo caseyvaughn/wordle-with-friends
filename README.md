@@ -99,8 +99,15 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| Proposal            |    H     |      3 hrs      |      hrs     |     hrs    |
+| Create Backend      |    H     |      5 hrs      |      hrs     |     hrs    |
+| Backend full CRUD   |    H     |      2 hrs      |      hrs     |     hrs    |
+| Create word game    |    H     |      6 hrs      |      hrs     |     hrs    |
+|     |    H     |      hrs      |      hrs     |     hrs    |
+| Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
+| Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
+| Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
+| Styling             |    H     |     10 hrs      |      hrs     |     hrs    |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
@@ -110,8 +117,7 @@ src
 ### Server (Back End)
 
 #### ERD Model
-
-![ERD - WordleWithFriends](https://user-images.githubusercontent.com/91965654/155534625-9f6bee62-0c09-4c37-a567-8b5e1c79462c.png)
+![ERD - Wordle with Friends](https://user-images.githubusercontent.com/91965654/155542070-6e7add24-e88b-4539-9ac5-a376b394de39.png)
 <br>
 
 ***
@@ -129,4 +135,5 @@ src
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
+
 
