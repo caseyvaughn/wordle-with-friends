@@ -41,7 +41,7 @@ Link to wireframes: https://www.figma.com/file/vny95Kohk4AOCBbce6Z0hp/WordleWith
 
 #### Component Tree
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
+![Component Hierarchy](https://user-images.githubusercontent.com/91965654/155566564-e2a7e989-bb51-418e-9042-244cf222c9a0.png)
 
 #### Component Architecture
 
@@ -119,6 +119,7 @@ src
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
+
 
 
 
