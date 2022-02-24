@@ -9,14 +9,18 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 <br>
 
 ## MVP
+- Users can sign-up & login to WordleWithFriends
+- Users can create their own Wordle game 
+- Users can play Wordle games created by other users & leave a difficulty rating
+- The game has conditional design (dots will change color if the guessed letter is correct)
+- Full CRUD capabilities between the game (index, show, create, delete) & ratings (show, create, edit, delete)
 
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+## POST- MVP
+- The game's keyboard has conditional design (letters guessed witll change color)
+- Users can view their game stats on their profile (total number of games played, average number of guesses)
 
 <br>
 
-### Goals
-- Create 
-- _etc._
 
 <br>
 
@@ -30,7 +34,7 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 |   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
 | React Bootstrap  | _Lorem ipsum dolor sit amet, consectetur._ |
 |    Ruby on Rails | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+
 
 <br>
 
