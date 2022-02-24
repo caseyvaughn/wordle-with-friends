@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Wordle with Friends** is a Wordle game clone that allows users to create a 5-letter mystery word that other users can attempt to solve in 6 guesses. Users can rate the difficulty of the word puzzles they have completed. 
+**Wordle with Friends** is a Wordle game clone that allows users to create a 5-letter mystery word that other users can attempt to solve in 6 guesses. Users can rate the difficulty of the word puzzles they have completed and flag any words that do not meet World with Friend's word requirements. 
 Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.html
 <br>
 
@@ -12,9 +12,6 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 - Users can play Wordle games created by other users & leave a difficulty rating
 - The game has conditional design (dots will change color if the guessed letter is correct)
 - Full CRUD capabilities between the game (index, show, create, delete) & ratings (show, create, edit, delete)
-
-
-
 <br>
 
 ### Libraries and Dependencies
