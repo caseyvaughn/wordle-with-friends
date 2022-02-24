@@ -2,25 +2,20 @@
 
 ## Overview
 
-_**Wordle with Friends** is a Wordle game clone that allows users to create a 5-letter mystery word that other users can attempt to solve in 6 guesses. Users can rate the difficulty of the word puzzles they have completed. 
+**Wordle with Friends** is a Wordle game clone that allows users to create a 5-letter mystery word that other users can attempt to solve in 6 guesses. Users can rate the difficulty of the word puzzles they have completed. 
+Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.html
 
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
 _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
 
 <br>
 
 ### Goals
-
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
+- Create 
 - _etc._
 
 <br>
@@ -33,8 +28,8 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 | :--------------: | :----------------------------------------- |
 |      React       | _Lorem ipsum dolor sit amet, consectetur._ |
 |   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
+| React Bootstrap  | _Lorem ipsum dolor sit amet, consectetur._ |
+|    Ruby on Rails | _Lorem ipsum dolor sit amet, consectetur._ |
 |  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
 
 <br>
@@ -43,35 +38,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
+![WWF Wireframes](https://user-images.githubusercontent.com/91965654/155556227-d243504d-9c34-4fc0-aa9d-97d16767cea6.png)
 
-![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url)
-
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
 [Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
@@ -102,15 +73,15 @@ src
 | Proposal            |    H     |      3 hrs      |      hrs     |     hrs    |
 | Create Backend      |    H     |      5 hrs      |      hrs     |     hrs    |
 | Backend full CRUD   |    H     |      2 hrs      |      hrs     |     hrs    |
-| Create word game    |    H     |      6 hrs      |      hrs     |     hrs    |
-|     |    H     |      hrs      |      hrs     |     hrs    |
+| Create word game    |    H     |      8 hrs      |      hrs     |     hrs    |
+| Setup authentication|    H     |      3 hrs      |      hrs     |     hrs    |
 | Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
 | Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
 | Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
 | Styling             |    H     |     10 hrs      |      hrs     |     hrs    |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
+
 
 <br>
 
@@ -135,5 +106,6 @@ src
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
+
 
 
