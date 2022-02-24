@@ -92,7 +92,7 @@ src
 | Authorizations on words|    H     |      3 hrs      |      hrs     |     hrs    |
 | Words CRUD    |    H     |      2 hrs      |      hrs     |     hrs    |
 | Ratings CRUD    |    H     |      2 hrs      |      hrs     |     hrs    |
-| Add conditional styling    |    4 H     |      hrs      |      hrs     |     hrs    |
+| Add conditional styling    |     H     |     4 hrs      |      hrs     |     hrs    |
 | Styling             |    H     |     8 hrs      |      hrs     |     hrs    |
 | TOTAL               |          |     40 hrs      |     3 hrs     |     TBD     |
 
