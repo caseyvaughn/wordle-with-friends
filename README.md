@@ -57,7 +57,24 @@ src
       |__ mockups
 |__ components/
       |__ Header.jsx
+      |__ NavBar.jsx
+      |__ CreateWord.jsx
+      |__ DeleteWord.jsx
+      |__ CreateRating.jsx
+      |__ EditRating.jsx
+      |__ DeleteRating.jsx
 |__ services/
+      |__ apiConfig.jx
+      |__ users.js
+      |__ words.js
+      |__ wordGames.js
+      |__ ratings.js
+|__ screens
+      |__ WordList.jsx
+      |__ WordGame.jsx
+      |__ CreateWord.jsx
+      |__ Login.jsx
+      |__ Signup.jsx
 
 ```
 
@@ -70,9 +87,11 @@ src
 | Proposal            |    H     |      3 hrs      |      hrs     |     hrs    |
 | Setup  Backend      |    H     |      4 hrs      |      hrs     |     hrs    |
 | Backend full CRUD   |    H     |      2 hrs      |      hrs     |     hrs    |
-| Setup authentication|    H     |      3 hrs      |      hrs     |     hrs    |
-| Setup frontend basics|    H     |      6 hrs      |      hrs     |     hrs    |
-| Build word game (basic)    |    H     |      5 hrs      |      hrs     |     hrs    |
+| Login & Sign Up Form|    H     |      2 hrs      |      hrs     |     hrs    |
+| Build word game (basic)    |    H     |      6 hrs      |      hrs     |     hrs    |
+| Authorizations on words|    H     |      3 hrs      |      hrs     |     hrs    |
+| Words CRUD    |    H     |      2 hrs      |      hrs     |     hrs    |
+| Ratings CRUD    |    H     |      2 hrs      |      hrs     |     hrs    |
 | Add conditional styling    |    3 H     |      hrs      |      hrs     |     hrs    |
 | Styling             |    H     |     8 hrs      |      hrs     |     hrs    |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
