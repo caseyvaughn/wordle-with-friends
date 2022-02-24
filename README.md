@@ -108,7 +108,7 @@ src
 
 ## Post-MVP
 - Implement conditional design on the game's keyboard (letters guessed witll change color)
-- Users can view their game stats on their profile (total number of games played, average number of guesses)
+- Users can view their game stats on their profile (total number of games won, average number of guesses)
 
 ***
 
