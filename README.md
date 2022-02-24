@@ -35,7 +35,8 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 
 #### Wireframes
 
-![WWF Wireframes](https://user-images.githubusercontent.com/91965654/155556227-d243504d-9c34-4fc0-aa9d-97d16767cea6.png)
+![wireframe1](https://user-images.githubusercontent.com/91965654/155563100-bcc1e30d-0399-43e1-9e5b-91155edb03ed.png)
+![wireframe2](https://user-images.githubusercontent.com/91965654/155563104-9df77f90-1afd-4a31-8d29-2fb8a41edc7c.png)
 Link to wireframes: https://www.figma.com/file/vny95Kohk4AOCBbce6Z0hp/WordleWithFriends?node-id=0%3A1
 
 #### Component Tree
