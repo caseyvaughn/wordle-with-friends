@@ -12,18 +12,22 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 - Users can play Wordle games created by other users & leave a difficulty rating
 - The game has conditional design (dots will change color if the guessed letter is correct)
 - Full CRUD capabilities between the game (index, show, create, delete) & ratings (show, create, edit, delete)
+
+## Goals
+- Create a well-designed, easy to navigate website for users to create their own wordles and play wordles created by other users. 
+
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React Bootstrap  | _Lorem ipsum dolor sit amet, consectetur._ |
-|    Ruby on Rails | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | |
+|   React Router   | |
+|   Axios          |  |
+| React Bootstrap  | Styling library built specifically for React|
+|    Ruby on Rails | Backend |
+|    CORS          |  |
 
 <br>
 
@@ -63,17 +67,14 @@ src
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Proposal            |    H     |      3 hrs      |      hrs     |     hrs    |
-| Create Backend      |    H     |      5 hrs      |      hrs     |     hrs    |
+| Setup  Backend      |    H     |      4 hrs      |      hrs     |     hrs    |
 | Backend full CRUD   |    H     |      2 hrs      |      hrs     |     hrs    |
-| Create word game    |    H     |      8 hrs      |      hrs     |     hrs    |
 | Setup authentication|    H     |      3 hrs      |      hrs     |     hrs    |
-| Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
-| Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
-| Add Contact Form    |    H     |      hrs      |      hrs     |     hrs    |
-| Styling             |    H     |     10 hrs      |      hrs     |     hrs    |
+| Setup frontend basics|    H     |      6 hrs      |      hrs     |     hrs    |
+| Build word game (basic)    |    H     |      5 hrs      |      hrs     |     hrs    |
+| Add conditional styling    |    3 H     |      hrs      |      hrs     |     hrs    |
+| Styling             |    H     |     8 hrs      |      hrs     |     hrs    |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
-
-
 
 <br>
 
