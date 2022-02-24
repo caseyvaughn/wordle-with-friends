@@ -4,8 +4,6 @@
 
 **Wordle with Friends** is a Wordle game clone that allows users to create a 5-letter mystery word that other users can attempt to solve in 6 guesses. Users can rate the difficulty of the word puzzles they have completed. 
 Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.html
-
-
 <br>
 
 ## MVP
@@ -15,11 +13,6 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 - The game has conditional design (dots will change color if the guessed letter is correct)
 - Full CRUD capabilities between the game (index, show, create, delete) & ratings (show, create, edit, delete)
 
-## POST- MVP
-- The game's keyboard has conditional design (letters guessed witll change color)
-- Users can view their game stats on their profile (total number of games played, average number of guesses)
-
-<br>
 
 
 <br>
@@ -35,7 +28,6 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 | React Bootstrap  | _Lorem ipsum dolor sit amet, consectetur._ |
 |    Ruby on Rails | _Lorem ipsum dolor sit amet, consectetur._ |
 
-
 <br>
 
 ### Client (Front End)
@@ -43,10 +35,9 @@ Link to the original Wordle game: https://www.nytimes.com/games/wordle/index.htm
 #### Wireframes
 
 ![WWF Wireframes](https://user-images.githubusercontent.com/91965654/155556227-d243504d-9c34-4fc0-aa9d-97d16767cea6.png)
-
+Link to wireframes: https://www.figma.com/file/vny95Kohk4AOCBbce6Z0hp/WordleWithFriends?node-id=0%3A1
 
 #### Component Tree
-
 
 [Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
@@ -98,8 +89,8 @@ src
 ***
 
 ## Post-MVP
-
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Implement conditional design on the game's keyboard (letters guessed witll change color)
+- Users can view their game stats on their profile (total number of games played, average number of guesses)
 
 ***
 
