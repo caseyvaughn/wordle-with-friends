@@ -111,9 +111,7 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
-
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
+![ERD - WordleWithFriends](https://user-images.githubusercontent.com/91965654/155534625-9f6bee62-0c09-4c37-a567-8b5e1c79462c.png)
 <br>
 
 ***
@@ -131,3 +129,4 @@ src
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
+
