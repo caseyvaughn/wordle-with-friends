@@ -10,12 +10,13 @@ class WordsController < ApplicationController
 
   # GET /words/1
   def show
-    render json: @word
+    render json: @word #can add ,include: :reviews to add reviews to word
   end
 
   # POST /words
   def create
     @word = Word.new(word_params)
+    @word.user=@current_user
 
     if @word.save
       render json: @word, status: :created, location: @word
@@ -36,6 +37,7 @@ class WordsController < ApplicationController
   # DELETE /words/1
   def destroy
     @word.destroy
+    render json: @word
   end
 
   private

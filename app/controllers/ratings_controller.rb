@@ -4,8 +4,9 @@ class RatingsController < ApplicationController
   # GET /ratings
   def index
     @ratings = Rating.all
+    @ratings = @word.ratings
 
-    render json: @ratings
+    render json: @ratings #, include: :user
   end
 
   # GET /ratings/1
@@ -16,6 +17,7 @@ class RatingsController < ApplicationController
   # POST /ratings
   def create
     @rating = Rating.new(rating_params)
+    @rating.user=@current_user
 
     if @rating.save
       render json: @rating, status: :created, location: @rating
@@ -36,6 +38,7 @@ class RatingsController < ApplicationController
   # DELETE /ratings/1
   def destroy
     @rating.destroy
+    render json: @rating
   end
 
   private
