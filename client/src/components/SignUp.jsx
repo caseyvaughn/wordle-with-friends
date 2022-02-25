@@ -49,34 +49,6 @@ export default function SignUp(props) {
           value={password}></Form.Control>
       </Form.Group>
       <Button type="submit">sign-up</Button>
-
     </Form>
-
-
-
-
-
-
-
-
   )
 }
-
-{/* <form onSubmit={async (e) => {
-  e.preventDefault()
-  const user = {
-    username,
-    email,
-    password
-  }
-  const resp = await registerUser(user)
-  props.setCurrentUser(resp)
-
-  navigate('/')
-
-}}>
-  <input type='text' placeholder ="username" onChange={(e) => setUsername(e.target.value) } value={username} />
-  <input type='text' placeholder ="email" onChange={(e) => setEmail(e.target.value) } value={email} />
-  <input type='password' placeholder ="password" onChange={ (e) => setPassword(e.target.value)} value={password} />
-  <button>Sign Up</button>
-</form> */}
