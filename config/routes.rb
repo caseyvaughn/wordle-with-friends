@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :games
   end
 
+  #custom route to get user's words
+  get '/users/:user_id/words', to: 'words#get_user_words'
+
+  #authentications routes 
   post '/auth/login', to: 'authentications#login'
   get '/auth/verify', to: 'authentications#verify'
 
