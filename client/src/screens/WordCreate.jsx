@@ -16,7 +16,9 @@ export default function WordCreate(props) {
           solution_word
         }
         props.handleCreate(word)
-        navigate(`/words/:id`)
+        // navigate(`/words/${id}`)
+        // //id is turning up as undefined!!!
+        // console.log(`/words/${id}`)
       }}>
       <Form.Group>
         <Form.Label>solution word</Form.Label>
