@@ -1,5 +1,7 @@
 class WordsController < ApplicationController
   before_action :set_word, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_products]
+  # before_action :require_login
 
   # GET /words
   def index
