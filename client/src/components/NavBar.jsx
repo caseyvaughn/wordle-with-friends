@@ -13,7 +13,7 @@ export default function NavBar(props) {
         <>
          <h5>Welcome, {props.currentUser.username}!</h5>
           <NavLink to="/words/create">create a wordle</NavLink>
-          <NavLink to="/">browse all wordles</NavLink>
+          <NavLink to="/words">browse all wordles</NavLink>
           <NavLink to="/">play random wordle</NavLink>
           <Button onClick={props.logout}>logout</Button>
         </>
