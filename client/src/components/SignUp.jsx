@@ -48,6 +48,13 @@ export default function SignUp(props) {
           onChange={(e) => setPassword(e.target.value)}
           value={password}></Form.Control>
       </Form.Group>
+      <Form.Group>
+        <Form.Label>confirm password</Form.Label>
+        <Form.Control
+          type='password'
+          placeholder ="confirm password"
+        ></Form.Control>
+      </Form.Group>
       <Button type="submit">sign-up</Button>
     </Form>
   )

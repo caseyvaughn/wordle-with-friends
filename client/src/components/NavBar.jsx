@@ -11,7 +11,10 @@ export default function NavBar(props) {
           <Navbar.Brand to="/">WordleWithFriends</Navbar.Brand>
       {props.currentUser ?
         <>
-          <h1>Welcome back, {props.currentUser.username}!</h1>
+         <h5>Welcome, {props.currentUser.username}!</h5>
+          <NavLink to="/words/create">create a wordle</NavLink>
+          <NavLink to="/">browse all wordles</NavLink>
+          <NavLink to="/">play random wordle</NavLink>
           <Button onClick={props.logout}>logout</Button>
         </>
         :
@@ -19,8 +22,7 @@ export default function NavBar(props) {
           <NavLink to="/login">login</NavLink> <br/>
           <NavLink to="/signup">signup</NavLink>
         </>}
-          <NavLink to="/">browse all wordles</NavLink>
-          <NavLink to="/">play random wordle</NavLink>
+  
           </Container>
       </Navbar>
       </div>
