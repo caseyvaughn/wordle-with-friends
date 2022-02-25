@@ -1,13 +1,20 @@
 class WordsController < ApplicationController
   before_action :set_word, only: %i[ show update destroy ]
-  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_products]
-  # before_action :require_login
+  #authorize_request will run before the methods listed after only
+  before_action :authorize_request, only: [:create, :destroy, :get_user_words]
+  before_action :authorize_item, only: [:destroy]
 
   # GET /words
   def index
     @words = Word.all
 
     render json: @words
+  end
+
+   # Get /users/:user_id/words
+   def get_user_words
+    @user = User.find(params[:user_id])
+    render json: @user.words
   end
 
   # GET /words/1
@@ -27,14 +34,15 @@ class WordsController < ApplicationController
     end
   end
 
+  #disable edit word functionality! users CANNOT change a solution word
   # PATCH/PUT /words/1
-  def update
-    if @word.update(word_params)
-      render json: @word
-    else
-      render json: @word.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @word.update(word_params)
+  #     render json: @word
+  #   else
+  #     render json: @word.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /words/1
   def destroy
@@ -51,5 +59,12 @@ class WordsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def word_params
       params.require(:word).permit(:solution_word, :user_id)
+    end
+
+    #users can only delete words they have created 
+    def authorize_item
+      unless @word.user == @current_user 
+        render json: @word, status: :unauthorized
+      end
     end
 end
