@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { verifyUser } from './services/users';
 import SignUp from './components/SignUp'
-// import Login from './components/Login'
+import Login from './components/Login';
 
 function App() {
    const [currentUser, setCurrentUser] = useState(null)
@@ -24,8 +24,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<h1>login</h1>}/>
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/" element={<h1>Wordle with Friends</h1>}/>
+        <Route path="/login" element={<Login setCurrentUser={setCurrentUser}/>}/>
+        <Route path="/signup" element={<SignUp setCurrentUser={setCurrentUser}/>}/>
       </Routes>
     </div>
   );
