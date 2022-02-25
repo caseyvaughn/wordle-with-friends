@@ -5,6 +5,7 @@ import { verifyUser } from './services/users';
 import SignUp from './components/SignUp'
 import Login from './components/Login';
 import NavBar from './components/NavBar';
+import WordsContainer from './containers/WordsContainer';
 
 function App() {
    const [currentUser, setCurrentUser] = useState(null)
@@ -28,7 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Wordle with Friends</h1>}/>
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser}/>}/>
-        <Route path="/signup" element={<SignUp setCurrentUser={setCurrentUser}/>}/>
+        <Route path="/signup" element={<SignUp setCurrentUser={setCurrentUser} />} />
+        <Route path='/words/*' element={<WordsContainer currentUser={currentUser} />}/>
       </Routes>
     </div>
   );
