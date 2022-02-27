@@ -20,6 +20,8 @@ export default function WordDetail(props) {
   return (
     <div>WordDetail
       <h1>{word.solution_word}</h1>
+      <h2>{word.user_id}</h2>
+      <h2>creator: {word.user?.username}</h2>
       {/* //delete functionality will appear for words the user has created! */}
       {props.currentUser?.id === word.user_id ?
         <>

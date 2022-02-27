@@ -8,7 +8,7 @@ class WordsController < ApplicationController
   def index
     @words = Word.all
 
-    render json: @words
+    render json: @words, include: :user
   end
 
    # Get /users/:user_id/words
@@ -19,7 +19,7 @@ class WordsController < ApplicationController
 
   # GET /words/1
   def show
-    render json: @word #can add ,include: :reviews to add reviews to word
+    render json: @word, include: :user #can add ,include: :reviews to add reviews to word
   end
 
   # POST /words

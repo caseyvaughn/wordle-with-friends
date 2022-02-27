@@ -10,6 +10,10 @@ export const getOneWord = async (word_id) => {
   return resp.data
 }
 
+export const getRandomWord = async () => {
+  const resp = await api.get()
+}
+
 export const createWord = async (wordData) => {
   const resp = await api.post('/words', {word: wordData})
   return resp.data
