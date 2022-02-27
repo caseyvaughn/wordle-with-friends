@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getOneWord } from "../services/words";
+import Button from 'react-bootstrap/Button'
 
-export default function WordDetail() {
+export default function WordDetail(props) {
   const [word, setWord] = useState({})
   // const [ratings, setRatings]=useState([])
   const { id } = useParams()
@@ -19,6 +20,14 @@ export default function WordDetail() {
   return (
     <div>WordDetail
       <h1>{word.solution_word}</h1>
+      {/* //delete functionality will appear for words the user has created! */}
+      {props.currentUser?.id === word.user_id ?
+        <>
+          <Button onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
+        </>
+        :
+        null
+      }
     </div>
   )
 }

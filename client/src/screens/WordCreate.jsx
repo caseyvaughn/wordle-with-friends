@@ -15,6 +15,7 @@ export default function WordCreate(props) {
         const word = {
           solution_word
         }
+        console.log(word)
         props.handleCreate(word)
         // navigate(`/words/${id}`)
         // //id is turning up as undefined!!!

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect} from "react"
 import { Link, Routes, Route, useNavigate } from 'react-router-dom'
 import {getAllWords, getOneWord, createWord, deleteWord} from "../services/words"
 import WordCreate from "../screens/WordCreate"
@@ -22,15 +22,25 @@ export default function WordsContainer(props) {
 
 
   const handleDelete = async (id) => {
-    await deleteWord(id)
-    setToggle(prevToggle => !prevToggle)
-    navigate('/')
+    try {
+      await deleteWord(id)
+      // setToggle(prevToggle => !prevToggle)
+      navigate('/')
+    } catch (err) {
+      console.log(err)
+    }
   }
 
-  const handleCreate = async (id, formData) => {
-    await createWord(formData)
+  const handleCreate = async (formData) => {
+    const {id} = await createWord(formData)
     setToggle(prevToggle => !prevToggle)
-    // navigate(`/words/${id}`)
+    navigate(`/words/${id}`)
+  
+    // const data = {id: 'value', info: 'whataver'}
+    // const id = data.id;
+    // const info = data.info;
+    // const { id, info } = data;
+   
   }
   
   return ( 
