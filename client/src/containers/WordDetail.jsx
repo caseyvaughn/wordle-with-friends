@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { getOneWord } from "../services/words";
 import Button from 'react-bootstrap/Button'
 
@@ -26,10 +26,12 @@ export default function WordDetail(props) {
       {/* //delete functionality will appear for words the user has created! */}
       {props.currentUser?.id === word.user_id ?
         <>
-          <Button onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
+        <Button onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
         </>
         :
-        null
+        <Link to={`/words/${id}/newgame`}>
+          <Button>play wordle!</Button>
+        </Link>
       }
     </div>
   )

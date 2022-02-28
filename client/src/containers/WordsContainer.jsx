@@ -5,7 +5,8 @@ import WordCreate from "../screens/WordCreate"
 import Words from "../screens/Words"
 import WordDetail from "./WordDetail"
 import GamesContainer from "./GamesContainer"
-
+import Game from "../components/Game/Game"
+// client/src/components/Game/Game.jsx
 export default function WordsContainer(props) {
   const [words, setWords] = useState([])
   const [toggle, setToggle] = useState(false)
@@ -44,10 +45,11 @@ export default function WordsContainer(props) {
         <Route path='/' element={
           <Words
             words={words}
-            currentUser={props.currentUser}
-          />
-        } />
-
+            currentUser={props.currentUser} />}/>
+        
+        <Route path='/:id/newgame' element={
+          <Game currentUser={props.currentUser}/>} />
+        
         <Route path='/:id/games/:game_id' element={
           <GamesContainer currentUser={props.currentUser}/>
         } /> 
