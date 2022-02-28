@@ -11,7 +11,7 @@ class GamesController < ApplicationController
 
   # GET /games/1
   def show
-    render json: @game, include: :word
+    render json: @game, include: [:word, :user]
   end
 
   # POST /games
