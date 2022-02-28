@@ -8,6 +8,7 @@ export default function WordDetail(props) {
   // const [ratings, setRatings]=useState([])
   const { id } = useParams()
   const navigate = useNavigate()
+
   
   useEffect(() => {
     const fetchWord = async () => {
