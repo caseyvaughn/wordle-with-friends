@@ -5,8 +5,8 @@ export const getAllGames = async () => {
   return resp.data
 }
 
-export const getOneGame = async (game_id) => {
-  const resp = await api.get(`/games/${game_id}`)
+export const getOneGame = async (word_id, game_id) => {
+  const resp = await api.get(`/words/${word_id}/games/${game_id}`)
   return resp.data
 }
 

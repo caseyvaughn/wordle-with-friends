@@ -32,7 +32,7 @@ function App() {
         <Route path="/" element={<h1>Wordle with Friends</h1>}/>
         <Route path="/login" element={<Login setCurrentUser={setCurrentUser}/>}/>
         <Route path="/signup" element={<SignUp setCurrentUser={setCurrentUser} />} />
-        <Route path='/words/:word_id/games/*' element={<GamesContainer currentUser={currentUser}/>} />
+        {/* <Route path='/words/:word_id/games/*' element={<GamesContainer currentUser={currentUser}/>} /> */}
         <Route path='/words/*' element={<WordsContainer currentUser={currentUser} />} />
  
       </Routes>

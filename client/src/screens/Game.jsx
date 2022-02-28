@@ -25,12 +25,13 @@ export default function Game(props) {
   //   }
   //   fetchGame()
   // }, [id])
-  console.log("testing game page")
+  console.log("props", props)
+  
   return (
     <div>
       <h1>Game!</h1>
-      <h2>{props.game.user_id}</h2>
-      <h2>{props.word.solution_word}</h2>
+      {/* <h2>{props.game.user_id}</h2>
+      <h2>{props.word.solution_word}</h2> */}
     </div>
   )
 }

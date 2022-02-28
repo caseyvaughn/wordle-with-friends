@@ -5,6 +5,7 @@ import WordCreate from "../screens/WordCreate"
 import Words from "../screens/Words"
 import WordDetail from "./WordDetail"
 import Game from "../screens/Game"
+import GamesContainer from "./GamesContainer"
 
 
 export default function WordsContainer(props) {
@@ -53,11 +54,15 @@ export default function WordsContainer(props) {
           />
         } />
 
-        <Route path='/:id/games/:id' element={
-          <Game
-            // games={games}
-            currentUser={props.currentUser}/>
-        } />
+     
+
+        <Route path='/:id/games/:game_id' element={
+          <GamesContainer/>
+          // <Game
+          //   // games={games}
+          //   currentUser={props.currentUser}/>
+     
+        } /> 
 
         <Route path='/:id' element={
           <WordDetail

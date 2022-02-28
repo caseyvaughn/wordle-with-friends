@@ -10,8 +10,13 @@ export default function GamesContainer(props) {
   const [game, setGame] = useState([])
   const [toggle, setToggle] = useState(false)
   const navigate = useNavigate()
-  const { id } = useParams()
-
+  //destructure game_id as id
+  // const { game_id: id } = useParams()
+  const params = useParams()
+  console.log(params);
+  const { id } = useParams();
+  const word_id = params.id
+  const game_id = params.game_id
   useEffect(() => {
     //   const fetchGames = async () => {
     //     const games = await getAllGames()
@@ -20,12 +25,13 @@ export default function GamesContainer(props) {
     //   fetchGames()
     // }, [toggle])
 
-    const fetchGame = async (id) => {
-      const game = await getOneGame(id)
+    const fetchGame = async (word_id, game_id) => {
+      const game = await getOneGame(word_id, game_id)
       setGame(game)
+      console.log(game)
     }
-    fetchGame()
-  }, [id])
+    fetchGame(word_id, game_id)
+  }, [word_id, game_id])
 
   const handleCreate = async () => {
     await createGame()
@@ -35,14 +41,16 @@ export default function GamesContainer(props) {
   return (
     <div>GamesContainer
       <h1>HELP ME</h1>
+      <h1>user won? {game?.user_won}</h1>
+      <h1>game id: {game.id}</h1>
 
-      <Routes>
+      {/* <Routes>
         <Route path='/:id' element={
           <Game
             games={games}
             currentUser={props.currentUser}/>
         } />
-      </Routes>
+      </Routes> */}
     </div>
   )
 }
