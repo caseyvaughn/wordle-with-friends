@@ -6,7 +6,6 @@ import SignUp from './components/SignUp'
 import Login from './components/Login';
 import NavBar from './components/NavBar';
 import WordsContainer from './containers/WordsContainer';
-import Game from './screens/Game';
 import GamesContainer from './containers/GamesContainer';
 
 function App() {

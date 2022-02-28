@@ -1,30 +1,18 @@
 import { useState, useEffect} from "react"
-import { Link, useParams, Routes, Route, useNavigate } from 'react-router-dom'
-import { getAllGames, getOneGame, createGame } from "../services/games"
-import { createWord } from "../services/words"
-import Game from "../screens/Game"
+import { useParams, useNavigate } from 'react-router-dom'
+import { getOneGame, createGame } from "../services/games"
 
 
 export default function GamesContainer(props) {
-  const [games, setGames] = useState([])
   const [game, setGame] = useState([])
-  const [toggle, setToggle] = useState(false)
   const navigate = useNavigate()
-  //destructure game_id as id
-  // const { game_id: id } = useParams()
   const params = useParams()
-  console.log(params);
-  const { id } = useParams();
   const word_id = params.id
   const game_id = params.game_id
+  console.log(params);
+  // const { id } = useParams();
+  
   useEffect(() => {
-    //   const fetchGames = async () => {
-    //     const games = await getAllGames()
-    //     setGames(games)
-    //   }
-    //   fetchGames()
-    // }, [toggle])
-
     const fetchGame = async (word_id, game_id) => {
       const game = await getOneGame(word_id, game_id)
       setGame(game)
@@ -32,6 +20,7 @@ export default function GamesContainer(props) {
     }
     fetchGame(word_id, game_id)
   }, [word_id, game_id])
+  console.log(game.user_won)
 
   const handleCreate = async () => {
     await createGame()
@@ -39,18 +28,15 @@ export default function GamesContainer(props) {
   }
 
   return (
-    <div>GamesContainer
-      <h1>HELP ME</h1>
-      <h1>user won? {game?.user_won}</h1>
+    <div>
+      <h1>Game summary:</h1>
+      <h1>player: {game.user?.username}</h1>
       <h1>game id: {game.id}</h1>
-
-      {/* <Routes>
-        <Route path='/:id' element={
-          <Game
-            games={games}
-            currentUser={props.currentUser}/>
-        } />
-      </Routes> */}
+      <h1>guesses: {game.guesses}</h1>
+      {game.user_won ?
+        <h1> Congrats, {game.user?.username}! You solved this wordle with {game.guesses} guesses!</h1>
+        :
+        <h2> Sorry, {game.user?.username}, you lost. Try another wordle! </h2>}
     </div>
   )
 }

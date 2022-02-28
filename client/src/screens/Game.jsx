@@ -1,37 +1,24 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { getOneGame } from "../services/games";
-import { getOneWord } from "../services/words";
+// import { useState, useEffect } from "react";
+// import { useNavigate, useParams } from "react-router-dom";
+// import { getOneGame } from "../services/games";
+// import { getOneWord } from "../services/words";
 
 
-export default function Game(props) {
-  // const [word, setWord] = useState({})
-  // const [game, setGame] = useState({})
-  // // const [ratings, setRatings]=useState([])
-  // const { id } = useParams()
-  // const navigate = useNavigate()
-
-  // useEffect(() => {
-  // //   const fetchWord = async () => {
-  // //     const word = await getOneWord(id)
-  // //     setWord(word)
-  // //   }
-  // //   fetchWord()
-  // // }, [id]
-
-  //   const fetchGame = async () => {
-  //     const game = await getOneGame(id)
-  //     setGame(game)
-  //   }
-  //   fetchGame()
-  // }, [id])
-  console.log("props", props)
+// export default function Game(props) {
+//   const params = useParams()
+//   console.log(params)
+//   console.log("props", props)
+//   console.log(params.id)
+//   console.log(params.word_id)
   
-  return (
-    <div>
-      <h1>Game!</h1>
-      {/* <h2>{props.game.user_id}</h2>
-      <h2>{props.word.solution_word}</h2> */}
-    </div>
-  )
-}
+//   return (
+//     <div>
+//       <h1>Game Screen</h1>
+//       {/* <h1>user won? {game?.user_won}</h1>
+//       <h1>game id: {game.id}</h1>  */}
+      
+    
+//       {/* <h1>{props.game.user_won}</h1> */}
+//     </div>
+//   )
+// }
