@@ -4,9 +4,7 @@ import {getAllWords, getOneWord, createWord, deleteWord} from "../services/words
 import WordCreate from "../screens/WordCreate"
 import Words from "../screens/Words"
 import WordDetail from "./WordDetail"
-import Game from "../screens/Game"
 import GamesContainer from "./GamesContainer"
-
 
 export default function WordsContainer(props) {
   const [words, setWords] = useState([])
@@ -20,7 +18,6 @@ export default function WordsContainer(props) {
     }
     fetchWords()
   }, [toggle])
-
 
   const handleDelete = async (id) => {
     try {
@@ -36,14 +33,11 @@ export default function WordsContainer(props) {
     const {id} = await createWord(formData)
     setToggle(prevToggle => !prevToggle)
     navigate(`/words/${id}`)
-  
     // const data = {id: 'value', info: 'whataver'}
     // const id = data.id;
     // const info = data.info;
     // const { id, info } = data;
-   
   }
-  
   return ( 
     <div>
       <Routes>
@@ -54,14 +48,8 @@ export default function WordsContainer(props) {
           />
         } />
 
-     
-
         <Route path='/:id/games/:game_id' element={
-          <GamesContainer/>
-          // <Game
-          //   // games={games}
-          //   currentUser={props.currentUser}/>
-     
+          <GamesContainer currentUser={props.currentUser}/>
         } /> 
 
         <Route path='/:id' element={
@@ -76,7 +64,6 @@ export default function WordsContainer(props) {
             handleCreate={handleCreate}
           />
         } />
-         
       </Routes>
     </div>
   )
