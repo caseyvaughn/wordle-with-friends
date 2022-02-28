@@ -1,9 +1,11 @@
-.keyboard-rows {
+body {
+  border: 2px solid pink;
+}
+
+.keyboard-container {
   display: flex;
+  position: relative;
   flex-direction: column;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 10px;
 }
 .row {
   width: auto;
@@ -11,8 +13,15 @@
   flex-direction: row;
   gap: 5px;
 }
+.keyboard-rows {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-.key-button {
+button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
