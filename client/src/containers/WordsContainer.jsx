@@ -2,9 +2,10 @@ import { useState, useEffect} from "react"
 import { Link, Routes, Route, useNavigate } from 'react-router-dom'
 import {getAllWords, getOneWord, createWord, deleteWord} from "../services/words"
 import WordCreate from "../screens/WordCreate"
-// import Words from "../components/words/Words"
 import Words from "../screens/Words"
 import WordDetail from "./WordDetail"
+import Game from "../screens/Game"
+import GamesContainer from "./GamesContainer"
 
 
 export default function WordsContainer(props) {
@@ -52,6 +53,17 @@ export default function WordsContainer(props) {
             currentUser={props.currentUser}
           />
         } />
+
+     
+
+        <Route path='/:id/games/:game_id' element={
+          <GamesContainer/>
+          // <Game
+          //   // games={games}
+          //   currentUser={props.currentUser}/>
+     
+        } /> 
+
         <Route path='/:id' element={
           <WordDetail
             words={words}
@@ -64,6 +76,7 @@ export default function WordsContainer(props) {
             handleCreate={handleCreate}
           />
         } />
+         
       </Routes>
     </div>
   )

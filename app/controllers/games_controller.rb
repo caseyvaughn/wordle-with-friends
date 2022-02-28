@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /games
   def index
@@ -10,15 +11,18 @@ class GamesController < ApplicationController
 
   # GET /games/1
   def show
-    render json: @game
+    render json: @game, include: :word
   end
 
   # POST /games
   def create
     @game = Game.new(game_params)
+    @game.user = @current_user
+    @game.word_id = params[:word_id]
 
     if @game.save
-      render json: @game, status: :created, location: @game
+      render json: @game, status: :created
+      # render json: @game, status: :created, location: @game
     else
       render json: @game.errors, status: :unprocessable_entity
     end
