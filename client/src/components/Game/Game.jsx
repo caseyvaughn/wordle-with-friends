@@ -140,7 +140,7 @@ export default function Game(props) {
   return (
     <div>
       <h2>solution word: {word.solution_word}</h2>
-      {/* <RatingsContainer/> */}
+      <RatingsContainer/>
       <div className='game-container'>
           <div className='top'>
             <div className='title'>WORDLE GAME #{word.id}</div>

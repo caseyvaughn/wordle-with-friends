@@ -25,6 +25,7 @@ export default function RatingsContainer(props) {
     await deleteRating(id, review_id)
   }
 
+  
   return (
     <div>RatingsContainer
       <RatingCreate handleRatingCreate={handleRatingCreate}/>
