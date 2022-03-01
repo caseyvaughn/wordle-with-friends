@@ -1,26 +1,30 @@
 class RatingsController < ApplicationController
   before_action :set_rating, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /ratings
   def index
-    @ratings = Rating.all
+    @word=Word.find(params[:word_id])
     @ratings = @word.ratings
-
+ 
     render json: @ratings #, include: :user
   end
 
+
   # GET /ratings/1
   def show
-    render json: @rating
+    render json: @ratings
+    #, include: [:word, :user]
   end
 
   # POST /ratings
   def create
     @rating = Rating.new(rating_params)
     @rating.user=@current_user
+    @rating.word_id = params[:word_id]
 
     if @rating.save
-      render json: @rating, status: :created, location: @rating
+      render json: @rating, status: :created
     else
       render json: @rating.errors, status: :unprocessable_entity
     end
