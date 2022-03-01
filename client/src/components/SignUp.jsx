@@ -21,11 +21,13 @@ export default function SignUp(props) {
       }
       const resp = await registerUser(user)
       props.setCurrentUser(resp)
-      navigate('/')
-    }}>
+      navigate('/words')
+    }}
+    style={{"padding": "30px", "text-align":"left"}}>
       <Form.Group>
         <Form.Label>username</Form.Label>
         <Form.Control
+          style={{ "width": "50%"}}
           type='text'
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
@@ -35,6 +37,7 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>email</Form.Label>
         <Form.Control
+          style={{ "width": "50%"}}
           type='text'
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -43,6 +46,7 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>password</Form.Label>
         <Form.Control
+          style={{ "width": "50%"}}
           type='password'
           placeholder ="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -51,11 +55,12 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>confirm password</Form.Label>
         <Form.Control
+          style={{ "width": "50%"}}
           type='password'
           placeholder ="confirm password"
         ></Form.Control>
       </Form.Group>
-      <Button type="submit">sign-up</Button>
+      <Button style={{ "margin-top": "10px" }} type="submit">sign-up!</Button>
     </Form>
   )
 }
