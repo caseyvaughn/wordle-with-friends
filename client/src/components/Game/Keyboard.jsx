@@ -18,17 +18,17 @@ export default function Keyboard({ boardData, handleKeyboard }) {
         window.addEventListener("keydown", handleKey)
         return () => { window.removeEventListener("keydown", handleKey) }
     }, [handleKeyboard])
-  // console.log(boardData)
-  // console.log(handleKeyboard)
   console.log(keys)
+ 
   
   return (
     <div className="keyboard-container">
-    <div className="keyboard-rows">
-      {keys.map((item, index) => {
-        return <div className="row" key={index} >
+      <div className="row">
+        {keys.map((item, index) => {
+          //maps over the 3 key arrays; 1 for each keyboard row!
+        console.log(item)
+        return <div className="keyboard-rows" key={index} >
           {item.map((key, keyIndex) => { 
-            
               return (
                 <button key={keyIndex} 
                 // className={"key-correct"}
