@@ -1,27 +1,13 @@
-body {
-  border: 2px solid pink;
-}
-
 .keyboard-container {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-}
-.row {
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-}
-.keyboard-rows {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 10px;
+  height: 100vh;
+  margin-top: 20px;
 }
 
-button {
+.keyboard-rows {
+  padding-bottom: 10px;
+}
+
+.key-button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -29,9 +15,10 @@ button {
   padding: 22px 18px;
   border: none;
   text-transform: uppercase;
+  margin: 5px;
 }
 .key-correct {
-  background: #6aaa64;
+  background: #339966;
   color: #fff;
 }
 
