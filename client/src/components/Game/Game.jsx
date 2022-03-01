@@ -47,14 +47,13 @@ export default function Game(props) {
     //need to fix message handling!!!!
   const handleMessage = (message) =>{
     setMessage(message);
-    console.log(message)
+    // console.log(message)
     setTimeout(() => {
       setMessage(null);
     }, 3000);
   }
 
   const enterBoardWord = (guessWord) => {
-    console.log("enterBoardWord", guessWord)
     let boardWords = boardData.boardWords;
     let boardRowStatus = boardData.boardRowStatus;
     let solution = word.solution_word;
@@ -81,8 +80,8 @@ export default function Game(props) {
       }
     }
     if (matchCount === 5) {
-      console.log("WIN!")
-      status="WIN";
+      status = "WIN";
+      console.log(status)
       handleMessage("YOU WON")
     } else if (rowIndex + 1 === 6) {
       console.log("LOST")
@@ -140,7 +139,7 @@ export default function Game(props) {
   return (
     <div>
       <h2>solution word: {word.solution_word}</h2>
-      {/* <RatingsContainer/> */}
+      {/* {status==="WIN" ? <h1>YOU WON!!!!!</h1> : null} */}
       <div className='game-container'>
           <div className='top'>
             <div className='title'>WORDLE GAME #{word.id}</div>
@@ -163,6 +162,7 @@ export default function Game(props) {
             <Keyboard boardData={boardData} 
                       handleKeyboard = {handleKeyboard}/>
         </div>
+        <RatingsContainer/>
         </div>
     </div>
   )

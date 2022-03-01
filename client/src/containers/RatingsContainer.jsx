@@ -9,24 +9,24 @@ export default function RatingsContainer(props) {
   const [ratings, setRatings] = useState([])
   const { id } = useParams()
   
-  useEffect(() => {
-    const fetchRatings = async (word_id) => {
-      const ratings = await getWordRatings(word_id)
-      setRatings(ratings)
-    }
-    fetchRatings()
-  }, [id])
+  // useEffect(() => {
+  //   const fetchRatings = async (word_id) => {
+  //     const ratings = await getWordRatings(word_id)
+  //     setRatings(ratings)
+  //   }
+  //   fetchRatings()
+  // }, [id])
 
-  const handleRatingCreate = async (formData) => {
-    await createRating(id, formData)
+  const handleRatingCreate = async (word_id, ratingData) => {
+    await createRating(word_id, ratingData)
   }
 
   const handleRatingDelete = async (review_id) => {
     await deleteRating(id, review_id)
   }
-
   return (
-    <div>RatingsContainer
+    <div>
+      <h2>RatingsContainer.jsx</h2>
       <RatingCreate handleRatingCreate={handleRatingCreate}/>
     </div>
   )
