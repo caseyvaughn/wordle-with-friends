@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :words, dependent: :destroy
-  has_many :reviews
+  has_many :ratings
   has_many :games
 
   #has_secure_passwords has built-in validaitons & will create a password hash set to the password_digest

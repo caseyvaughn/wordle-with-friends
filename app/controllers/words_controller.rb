@@ -19,7 +19,8 @@ class WordsController < ApplicationController
 
   # GET /words/1
   def show
-    render json: @word, include: :user #can add ,include: :reviews to add reviews to word
+    render json: @word,  include: :user
+    #can add include: [:user, :rating] to add ratings to word
   end
 
   # POST /words
