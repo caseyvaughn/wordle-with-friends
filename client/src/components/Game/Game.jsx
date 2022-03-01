@@ -39,7 +39,7 @@ export default function Game(props) {
                                  "presentCharArray":[],
                                  "absentCharArray":[],
                                  "correctCharArray":[],
-                                 "status":"IN_PROGRESS"}; 
+                                 "gameStatus":"IN_PROGRESS"}; 
       setBoardData(newBoardData);                      
     }
   }, []);
@@ -63,7 +63,7 @@ export default function Game(props) {
     let rowIndex = boardData.rowIndex;
     let rowStatus = [];
     let matchCount = 0;
-    let status = boardData.status;
+    let gameStatus = boardData.gameStatus;
     for(var index=0; index<guessWord.length; index++){
       if(solution.charAt(index) === guessWord.charAt(index)){
         matchCount++;
@@ -80,13 +80,13 @@ export default function Game(props) {
       }
     }
     if (matchCount === 5) {
-      status = "WIN";
-      console.log(status)
+      gameStatus = "WIN";
+      console.log(gameStatus)
       handleMessage("YOU WON")
     } else if (rowIndex + 1 === 6) {
       console.log("LOST")
       let result="LOST"
-      status="LOST";
+      gameStatus="LOST";
       handleMessage(boardData.solution)
     }
     boardRowStatus.push(rowStatus);
@@ -96,7 +96,7 @@ export default function Game(props) {
                                 "boardWords":boardWords,
                                 "boardRowStatus":boardRowStatus,
                                 "rowIndex":rowIndex+1,
-                                "status":status,
+                                "gameStatus":gameStatus,
                                 "presentCharArray":presentCharArray,
                                 "absentCharArray":absentCharArray,
                                 "correctCharArray":correctCharArray};
@@ -114,7 +114,7 @@ export default function Game(props) {
   //handle keyboard input
   const handleKeyboard = (key) => {
     //if the user has completed the game (if row index >5) or user wins, stop the game
-    if (boardData.rowIndex > 5 || boardData.status === "WIN") return;
+    if (boardData.rowIndex > 5 || boardData.gameStatus === "WIN") return;
     //if user is still playing & enters a 5-letter word, submit the guess word
     if (key === "ENTER") {
       if (charArray.length === 5) {
@@ -139,7 +139,16 @@ export default function Game(props) {
   return (
     <div>
       <h2>solution word: {word.solution_word}</h2>
-      {/* {status==="WIN" ? <h1>YOU WON!!!!!</h1> : null} */}
+      {/* receiving error with trying to have conditional logic through boardData!!!
+      {boardData.gameStatus === "WIN" ?
+        <>
+          <h1>you won!</h1>
+          <RatingsContainer/>
+        </>
+        :
+        null} */}
+      
+      
       <div className='game-container'>
           <div className='top'>
             <div className='title'>WORDLE GAME #{word.id}</div>
@@ -162,7 +171,7 @@ export default function Game(props) {
             <Keyboard boardData={boardData} 
                       handleKeyboard = {handleKeyboard}/>
         </div>
-        <RatingsContainer/>
+        
         </div>
     </div>
   )
