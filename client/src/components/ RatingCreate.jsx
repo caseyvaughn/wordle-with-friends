@@ -21,11 +21,11 @@ export default function RatingCreate(props) {
         }}>
           <Form.Group>
             <Form.Label>Please rate the word's difficulty easiest(1) to hardest (5)</Form.Label>
-            <Form.Range
+            {/* <Form.Range
               value={difficulty_rating}
               onChange={e => setDifficulty_rating(e.target.value)}
               min={1}
-              max={5}/>
+              max={5}/> */}
             <p></p>
               <RangeSlider
                 value={difficulty_rating}
@@ -33,10 +33,11 @@ export default function RatingCreate(props) {
                 min={1}
                 max={5}
               />
-            </Form.Group>
+          </Form.Group>
+          <Button size="sm" type="submit" style={{"width":"20%"}}>submit rating</Button>
         </Form>
         <p></p>
-        <Button size="sm" type="submit" style={{"width":"20%"}}>submit rating</Button>
+        
       </div>
     )
 }

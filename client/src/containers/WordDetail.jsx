@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { getOneWord } from "../services/words";
-import { Card, Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
+import Ratings from "../components/Ratings";
+import RatingsContainer from "./RatingsContainer";
 
 export default function WordDetail(props) {
   const [word, setWord] = useState({})
@@ -19,7 +21,7 @@ export default function WordDetail(props) {
 
   return (
     <div className="card-container create-word">
-      <Card style={{ width: "250px", height: "200px" }}>
+      <Card style={{ width: "250px", height: "700px" }}>
         <Card.Body>
           <Card.Title className="word-info">Wordle #{word.id}</Card.Title>
           <Card.Subtitle className="word-info mb-2 text-muted">Created by: {word.user?.username}</Card.Subtitle>
@@ -32,7 +34,8 @@ export default function WordDetail(props) {
             <Link to={`/words/${id}/newgame`}>
               <Button>play wordle!</Button>
             </Link>
-      }
+          }
+          <RatingsContainer currentUser = {props.currentUser}/>
         </Card.Body>
       </Card>
     </div>

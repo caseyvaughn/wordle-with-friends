@@ -133,7 +133,7 @@ export default function Game(props) {
       {boardData?.gameStatus === "WIN" ?
         <>
           <h1>Congratulations, you won!</h1>
-          <RatingsContainer/>
+          <RatingsContainer currentUser = {props.currentUser}/>
         </>
         :
         null}

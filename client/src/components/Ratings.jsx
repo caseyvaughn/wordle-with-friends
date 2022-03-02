@@ -1,7 +1,9 @@
-import React from 'react'
 
-export default function Ratings() {
+
+export default function Ratings(props) {
   return (
-    <div>Ratings</div>
+    <div>
+      Ratings
+    </div>
   )
 }

@@ -7,7 +7,7 @@ class RatingsController < ApplicationController
     @word=Word.find(params[:word_id])
     @ratings = @word.ratings
  
-    render json: @ratings #, include: :user
+    render json: @ratings, include: :user
   end
 
 
