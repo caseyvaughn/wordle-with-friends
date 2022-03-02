@@ -126,7 +126,7 @@ export default function Game(props) {
   return (
     <div>
       {boardData && <> 
-      <h4>solution word: {word.solution_word}</h4>
+      {/* <h4>solution word: {word.solution_word}</h4> */}
       {boardData?.gameStatus === "WIN" ?
           <>
           <h1>Congratulations, you won!</h1>
