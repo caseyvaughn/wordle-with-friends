@@ -5,6 +5,7 @@ import Keyboard from "./Keyboard"
 import "./Game.css"
 import RatingsContainer from "../../containers/RatingsContainer"
 import RatingCreate from "../ RatingCreate"
+import LetterBoard from "./LetterBoard"
 
 export default function Game(props) {
   //fetch the solution word the user is guessing against 
@@ -34,7 +35,7 @@ export default function Game(props) {
       setBoardData(newBoardData);                      
     }
   }, []);
-  console.log(boardData);
+  // console.log(boardData);
 
   //check each character of guessWord against solution; populate row status with the letter status
   const checkGuess = (guessWord, solution) => {
@@ -59,7 +60,7 @@ export default function Game(props) {
       if(rowStatus[i]==="correct"){
         if(!correctCharArray.includes(guessChar)) correctCharArray.push(guessChar);
         if(presentCharArray.indexOf(guessChar)!== -1) presentCharArray.splice(presentCharArray.indexOf(guessChar),1);
-      }else if(solution.includes(guessChar)){
+      }else if(rowStatus[i]==="present"){
         if(!correctCharArray.includes(guessChar) 
                 && !presentCharArray.includes(guessChar)) presentCharArray.push(guessChar);
       }else{
@@ -67,6 +68,7 @@ export default function Game(props) {
       }
     }
     
+    //logic for wongame final status
     if (wonGame) {
       gameStatus = "WIN";
       console.log(gameStatus)
@@ -75,11 +77,10 @@ export default function Game(props) {
       gameStatus="LOST";
     }
 
-
-
     boardRowStatus.push(rowStatus);
     boardWords[rowIndex] = guessWord;
     
+    //send updated board data to the board (send the react state)
     let newBoardData={...boardData,
                                 "boardWords":boardWords,
                                 "boardRowStatus":boardRowStatus,
@@ -92,8 +93,7 @@ export default function Game(props) {
   }
 
   const enterCurrentText = (guessWord) => {
-    let boardWords = boardData.boardWords;
-    let rowIndex=boardData.rowIndex;
+    const { boardWords, rowIndex } = boardData
     boardWords[rowIndex]=guessWord;
     let newBoardData={...boardData, "boardWords":boardWords};
     setBoardData(newBoardData); 
@@ -127,6 +127,8 @@ export default function Game(props) {
 
   return (
     <div>
+      {boardData && <> 
+
       <h4>solution word: {word.solution_word}</h4>
       {boardData?.gameStatus === "WIN" ?
         <>
@@ -135,30 +137,13 @@ export default function Game(props) {
         </>
         :
         null}
+      
       <div className='game-container'>
-          <div className='top'>
-            <div className='title'>WORDLE GAME #{word.id}</div>
-          </div>
-        
-          <div className='game-cube'>
-              {[0,1,2,3,4,5].map((row,rowIndex)=>(
-                <div className={'letter-row'} key={rowIndex}>
-                    {
-                      [0,1,2,3,4].map((column,letterIndex)=>(
-                        <div key={letterIndex} className={`letter ${boardData && boardData.boardRowStatus[row]?boardData.boardRowStatus[row][column]:""}`}>
-                          {boardData && boardData.boardWords[row] && boardData.boardWords[row][column]}
-                        </div>
-                      ))
-                    }
-                </div>
-              ))}
-          </div>
-          <div className='bottom'>
-            <Keyboard boardData={boardData} 
-                      handleKeyboard = {handleKeyboard}/>
-        </div>
-        
-        </div>
+          <div className='title top'>WORDLE GAME #{word.id}</div>
+          <LetterBoard boardData={boardData}/>
+          <Keyboard boardData={boardData} handleKeyboard = {handleKeyboard}/>
+      </div>
+      </>}
     </div>
   )
 }
