@@ -18,11 +18,8 @@ export default function Game(props) {
     fetchWord()
   }, [id])
 
-  const [message, setMessage] = useState(null);
-  const[result, setResult]=useState("")
   const [boardData, setBoardData] = useState(undefined)
   const [charArray, setCharArray] = useState([])
-
 
   useEffect(() => {
     if(!boardData || !boardData.solution){
@@ -37,52 +34,49 @@ export default function Game(props) {
       setBoardData(newBoardData);                      
     }
   }, []);
+  console.log(boardData);
 
-  //need to fix message handling!!!!
-  const handleMessage = (message) =>{
-    setMessage(message);
-    // console.log(message)
-    setTimeout(() => {
-      setMessage(null);
-    }, 3000);
+  //check each character of guessWord against solution; populate row status with the letter status
+  const checkGuess = (guessWord, solution) => {
+    const rowStatus = Array.from(guessWord).map((c, index) => {
+      if (c === solution[index]) {
+        return "correct"
+      } else if (solution.includes(c)) {
+        return "present"
+      } return "absent"
+    })
+    return rowStatus
   }
 
   const enterBoardWord = (guessWord) => {
-    let boardWords = boardData.boardWords;
-    let boardRowStatus = boardData.boardRowStatus;
+    let {boardWords, boardRowStatus, presentCharArray, absentCharArray, correctCharArray, rowIndex, gameStatus} = boardData
     let solution = word.solution_word;
-    let presentCharArray = boardData.presentCharArray;
-    let absentCharArray = boardData.absentCharArray;
-    let correctCharArray = boardData.correctCharArray;
-    let rowIndex = boardData.rowIndex;
-    let rowStatus = [];
-    let matchCount = 0;
-    let gameStatus = boardData.gameStatus;
-    for(var index=0; index<guessWord.length; index++){
-      if(solution.charAt(index) === guessWord.charAt(index)){
-        matchCount++;
-        rowStatus.push("correct");
-        if(!correctCharArray.includes(guessWord.charAt(index))) correctCharArray.push(guessWord.charAt(index));
-        if(presentCharArray.indexOf(guessWord.charAt(index))!== -1) presentCharArray.splice(presentCharArray.indexOf(guessWord.charAt(index)),1);
-      }else if(solution.includes(guessWord.charAt(index))){
-        rowStatus.push("present");
-        if(!correctCharArray.includes(guessWord.charAt(index)) 
-                && !presentCharArray.includes(guessWord.charAt(index))) presentCharArray.push(guessWord.charAt(index));
+    let rowStatus = checkGuess(guessWord, solution);
+    const wonGame = rowStatus.every((value) => value === "correct")  
+
+    for (let i = 0; i < guessWord.length; i++){
+      const guessChar=guessWord[i]
+      if(rowStatus[i]==="correct"){
+        if(!correctCharArray.includes(guessChar)) correctCharArray.push(guessChar);
+        if(presentCharArray.indexOf(guessChar)!== -1) presentCharArray.splice(presentCharArray.indexOf(guessChar),1);
+      }else if(solution.includes(guessChar)){
+        if(!correctCharArray.includes(guessChar) 
+                && !presentCharArray.includes(guessChar)) presentCharArray.push(guessChar);
       }else{
-        rowStatus.push("absent");
-        if(!absentCharArray.includes(guessWord.charAt(index))) absentCharArray.push(guessWord.charAt(index));
+        if(!absentCharArray.includes(guessChar)) absentCharArray.push(guessChar);
       }
     }
-    if (matchCount === 5) {
+    
+    if (wonGame) {
       gameStatus = "WIN";
       console.log(gameStatus)
-      handleMessage("YOU WON")
     } else if (rowIndex + 1 === 6) {
       console.log("LOST")
-      let result="LOST"
       gameStatus="LOST";
-      handleMessage(boardData.solution)
     }
+
+
+
     boardRowStatus.push(rowStatus);
     boardWords[rowIndex] = guessWord;
     
@@ -130,6 +124,7 @@ export default function Game(props) {
   }
   enterCurrentText(charArray.join("").toLowerCase());
   }
+
   return (
     <div>
       <h4>solution word: {word.solution_word}</h4>
