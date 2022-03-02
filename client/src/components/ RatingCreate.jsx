@@ -11,7 +11,6 @@ export default function RatingCreate(props) {
 
     return (
       <div>
-        <h2>RatingCreate.jsx</h2>
         <Form onSubmit={async (e) => {
           e.preventDefault()
           const rating = {

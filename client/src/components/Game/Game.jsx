@@ -22,13 +22,7 @@ export default function Game(props) {
   const[result, setResult]=useState("")
   const [boardData, setBoardData] = useState(undefined)
   const [charArray, setCharArray] = useState([])
-  // const [error, setError] = useState(false);
-  // const handleError = () =>{
-  //   setError(true);
-  //   setTimeout(() => {
-  //     setError(false);
-  //   }, 2000);
-  // }
+
 
   useEffect(() => {
     if(!boardData || !boardData.solution){
@@ -44,7 +38,7 @@ export default function Game(props) {
     }
   }, []);
 
-    //need to fix message handling!!!!
+  //need to fix message handling!!!!
   const handleMessage = (message) =>{
     setMessage(message);
     // console.log(message)
@@ -138,17 +132,14 @@ export default function Game(props) {
   }
   return (
     <div>
-      <h2>solution word: {word.solution_word}</h2>
-      {/* receiving error with trying to have conditional logic through boardData!!!
-      {boardData.gameStatus === "WIN" ?
+      <h4>solution word: {word.solution_word}</h4>
+      {boardData?.gameStatus === "WIN" ?
         <>
-          <h1>you won!</h1>
+          <h1>Congratulations, you won!</h1>
           <RatingsContainer/>
         </>
         :
-        null} */}
-      
-      
+        null}
       <div className='game-container'>
           <div className='top'>
             <div className='title'>WORDLE GAME #{word.id}</div>
