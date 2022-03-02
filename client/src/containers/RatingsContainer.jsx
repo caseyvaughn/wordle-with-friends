@@ -49,7 +49,7 @@ export default function RatingsContainer(props) {
   return (
     <div>
       <RatingCreate handleRatingCreate={!ratingID ? handleRatingCreate : handleRatingEdit} />
-      {averageRating && <p>Average Rating: {averageRating}</p>}
+      {averageRating && <p>Average Difficulty Rating: {averageRating}</p>}
     </div>
   )
 }
