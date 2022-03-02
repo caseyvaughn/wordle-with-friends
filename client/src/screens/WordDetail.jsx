@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getOneWord } from "../services/words";
 import { Card, Button } from 'react-bootstrap';
 import RatingsContainer from "../containers/RatingsContainer";
@@ -7,7 +7,6 @@ import RatingsContainer from "../containers/RatingsContainer";
 export default function WordDetail(props) {
   const [word, setWord] = useState({})
   const { id } = useParams()
-  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchWord = async () => {
