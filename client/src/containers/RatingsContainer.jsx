@@ -26,7 +26,6 @@ export default function RatingsContainer(props) {
   }
   return (
     <div>
-      <h2>RatingsContainer.jsx</h2>
       <RatingCreate handleRatingCreate={handleRatingCreate}/>
     </div>
   )

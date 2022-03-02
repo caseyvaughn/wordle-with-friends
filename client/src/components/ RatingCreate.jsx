@@ -11,7 +11,6 @@ export default function RatingCreate(props) {
 
     return (
       <div>
-        <h2>RatingCreate.jsx</h2>
         <Form onSubmit={async (e) => {
           e.preventDefault()
           const rating = {
@@ -22,6 +21,11 @@ export default function RatingCreate(props) {
         }}>
           <Form.Group>
             <Form.Label>Please rate the word's difficulty easiest(1) to hardest (5)</Form.Label>
+            <Form.Range
+              value={difficulty_rating}
+              onChange={e => setDifficulty_rating(e.target.value)}
+              min={1}
+              max={5}/>
             <p></p>
               <RangeSlider
                 value={difficulty_rating}

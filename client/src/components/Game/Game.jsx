@@ -5,6 +5,7 @@ import Keyboard from "./Keyboard"
 import "./Game.css"
 import RatingsContainer from "../../containers/RatingsContainer"
 import RatingCreate from "../ RatingCreate"
+import LetterBoard from "./LetterBoard"
 
 export default function Game(props) {
   //fetch the solution word the user is guessing against 
@@ -18,17 +19,8 @@ export default function Game(props) {
     fetchWord()
   }, [id])
 
-  const [message, setMessage] = useState(null);
-  const[result, setResult]=useState("")
   const [boardData, setBoardData] = useState(undefined)
   const [charArray, setCharArray] = useState([])
-  // const [error, setError] = useState(false);
-  // const handleError = () =>{
-  //   setError(true);
-  //   setTimeout(() => {
-  //     setError(false);
-  //   }, 2000);
-  // }
 
   useEffect(() => {
     if(!boardData || !boardData.solution){
@@ -43,55 +35,52 @@ export default function Game(props) {
       setBoardData(newBoardData);                      
     }
   }, []);
+  // console.log(boardData);
 
-    //need to fix message handling!!!!
-  const handleMessage = (message) =>{
-    setMessage(message);
-    // console.log(message)
-    setTimeout(() => {
-      setMessage(null);
-    }, 3000);
+  //check each character of guessWord against solution; populate row status with the letter status
+  const checkGuess = (guessWord, solution) => {
+    const rowStatus = Array.from(guessWord).map((c, index) => {
+      if (c === solution[index]) {
+        return "correct"
+      } else if (solution.includes(c)) {
+        return "present"
+      } return "absent"
+    })
+    return rowStatus
   }
 
   const enterBoardWord = (guessWord) => {
-    let boardWords = boardData.boardWords;
-    let boardRowStatus = boardData.boardRowStatus;
+    let {boardWords, boardRowStatus, presentCharArray, absentCharArray, correctCharArray, rowIndex, gameStatus} = boardData
     let solution = word.solution_word;
-    let presentCharArray = boardData.presentCharArray;
-    let absentCharArray = boardData.absentCharArray;
-    let correctCharArray = boardData.correctCharArray;
-    let rowIndex = boardData.rowIndex;
-    let rowStatus = [];
-    let matchCount = 0;
-    let gameStatus = boardData.gameStatus;
-    for(var index=0; index<guessWord.length; index++){
-      if(solution.charAt(index) === guessWord.charAt(index)){
-        matchCount++;
-        rowStatus.push("correct");
-        if(!correctCharArray.includes(guessWord.charAt(index))) correctCharArray.push(guessWord.charAt(index));
-        if(presentCharArray.indexOf(guessWord.charAt(index))!== -1) presentCharArray.splice(presentCharArray.indexOf(guessWord.charAt(index)),1);
-      }else if(solution.includes(guessWord.charAt(index))){
-        rowStatus.push("present");
-        if(!correctCharArray.includes(guessWord.charAt(index)) 
-                && !presentCharArray.includes(guessWord.charAt(index))) presentCharArray.push(guessWord.charAt(index));
+    let rowStatus = checkGuess(guessWord, solution);
+    const wonGame = rowStatus.every((value) => value === "correct")  
+
+    for (let i = 0; i < guessWord.length; i++){
+      const guessChar=guessWord[i]
+      if(rowStatus[i]==="correct"){
+        if(!correctCharArray.includes(guessChar)) correctCharArray.push(guessChar);
+        if(presentCharArray.indexOf(guessChar)!== -1) presentCharArray.splice(presentCharArray.indexOf(guessChar),1);
+      }else if(rowStatus[i]==="present"){
+        if(!correctCharArray.includes(guessChar) 
+                && !presentCharArray.includes(guessChar)) presentCharArray.push(guessChar);
       }else{
-        rowStatus.push("absent");
-        if(!absentCharArray.includes(guessWord.charAt(index))) absentCharArray.push(guessWord.charAt(index));
+        if(!absentCharArray.includes(guessChar)) absentCharArray.push(guessChar);
       }
     }
-    if (matchCount === 5) {
+    
+    //logic for wongame final status
+    if (wonGame) {
       gameStatus = "WIN";
       console.log(gameStatus)
-      handleMessage("YOU WON")
     } else if (rowIndex + 1 === 6) {
       console.log("LOST")
-      let result="LOST"
       gameStatus="LOST";
-      handleMessage(boardData.solution)
     }
+
     boardRowStatus.push(rowStatus);
     boardWords[rowIndex] = guessWord;
     
+    //send updated board data to the board (send the react state)
     let newBoardData={...boardData,
                                 "boardWords":boardWords,
                                 "boardRowStatus":boardRowStatus,
@@ -104,8 +93,7 @@ export default function Game(props) {
   }
 
   const enterCurrentText = (guessWord) => {
-    let boardWords = boardData.boardWords;
-    let rowIndex=boardData.rowIndex;
+    const { boardWords, rowIndex } = boardData
     boardWords[rowIndex]=guessWord;
     let newBoardData={...boardData, "boardWords":boardWords};
     setBoardData(newBoardData); 
@@ -136,43 +124,26 @@ export default function Game(props) {
   }
   enterCurrentText(charArray.join("").toLowerCase());
   }
+
   return (
     <div>
-      <h2>solution word: {word.solution_word}</h2>
-      {/* receiving error with trying to have conditional logic through boardData!!!
-      {boardData.gameStatus === "WIN" ?
+      {boardData && <> 
+
+      <h4>solution word: {word.solution_word}</h4>
+      {boardData?.gameStatus === "WIN" ?
         <>
-          <h1>you won!</h1>
+          <h1>Congratulations, you won!</h1>
           <RatingsContainer/>
         </>
         :
-        null} */}
-      
+        null}
       
       <div className='game-container'>
-          <div className='top'>
-            <div className='title'>WORDLE GAME #{word.id}</div>
-          </div>
-        
-          <div className='game-cube'>
-              {[0,1,2,3,4,5].map((row,rowIndex)=>(
-                <div className={'letter-row'} key={rowIndex}>
-                    {
-                      [0,1,2,3,4].map((column,letterIndex)=>(
-                        <div key={letterIndex} className={`letter ${boardData && boardData.boardRowStatus[row]?boardData.boardRowStatus[row][column]:""}`}>
-                          {boardData && boardData.boardWords[row] && boardData.boardWords[row][column]}
-                        </div>
-                      ))
-                    }
-                </div>
-              ))}
-          </div>
-          <div className='bottom'>
-            <Keyboard boardData={boardData} 
-                      handleKeyboard = {handleKeyboard}/>
-        </div>
-        
-        </div>
+          <div className='title top'>WORDLE GAME #{word.id}</div>
+          <LetterBoard boardData={boardData}/>
+          <Keyboard boardData={boardData} handleKeyboard = {handleKeyboard}/>
+      </div>
+      </>}
     </div>
   )
 }
