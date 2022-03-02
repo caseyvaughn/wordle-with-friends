@@ -5,7 +5,7 @@ import "./Words.css"
 export default function Words(props) {
   return (
     <div>
-      <Container className="grid" class="m-5 pb-5">
+      <Container className="grid" >
         <Row>
           {props.words.map(word => {
             return (

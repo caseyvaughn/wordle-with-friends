@@ -62,3 +62,12 @@
   background: #787c7e;
   color: #fff;
 }
+
+@media only screen and (max-width: 570px) {
+  .letter {
+    font-size: 30px;
+    font-weight: 700;
+    width: 55px;
+    height: 55px;
+  }
+}

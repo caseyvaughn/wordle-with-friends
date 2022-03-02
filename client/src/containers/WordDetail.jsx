@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { getOneWord } from "../services/words";
-import Button from 'react-bootstrap/Button'
+import { Card, Button} from 'react-bootstrap';
 
 export default function WordDetail(props) {
   const [word, setWord] = useState({})
@@ -9,7 +9,6 @@ export default function WordDetail(props) {
   const { id } = useParams()
   const navigate = useNavigate()
 
-  
   useEffect(() => {
     const fetchWord = async () => {
       const word = await getOneWord(id)
@@ -19,20 +18,23 @@ export default function WordDetail(props) {
   }, [id])
 
   return (
-    <div>WordDetail
-      <h1>{word.solution_word}</h1>
-      <h2>{word.user_id}</h2>
-      <h2>creator: {word.user?.username}</h2>
-      {/* //delete functionality will appear for words the user has created! */}
-      {props.currentUser?.id === word.user_id ?
-        <>
-        <Button onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
-        </>
-        :
-        <Link to={`/words/${id}/newgame`}>
-          <Button>play wordle!</Button>
-        </Link>
+    <div className="card-container create-word">
+      <Card style={{ width: "250px", height: "200px" }}>
+        <Card.Body>
+          <Card.Title className="word-info">Wordle #{word.id}</Card.Title>
+          <Card.Subtitle className="word-info mb-2 text-muted">Created by: {word.user?.username}</Card.Subtitle>
+          {props.currentUser?.id === word.user_id ?
+            <>
+              <h1>{word.solution_word}</h1>
+              <Button onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
+            </>
+            :
+            <Link to={`/words/${id}/newgame`}>
+              <Button>play wordle!</Button>
+            </Link>
       }
+        </Card.Body>
+      </Card>
     </div>
   )
 }

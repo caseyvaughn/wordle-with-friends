@@ -24,7 +24,7 @@ export default function WordsContainer(props) {
     try {
       await deleteWord(id)
       // setToggle(prevToggle => !prevToggle)
-      navigate('/')
+      navigate('/words')
     } catch (err) {
       console.log(err)
     }

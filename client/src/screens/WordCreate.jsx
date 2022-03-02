@@ -15,22 +15,23 @@ export default function WordCreate(props) {
         const word = {
           solution_word
         }
-        console.log(word)
         props.handleCreate(word)
         // navigate(`/words/${id}`)
         // //id is turning up as undefined!!!
         // console.log(`/words/${id}`)
-      }}>
+      }}
+      style={{"padding": "30px", "textAlign":"left"}}>
       <Form.Group>
-        <Form.Label>solution word</Form.Label>
+        {/* <Form.Label>solution word</Form.Label> */}
         <Form.Control
+          style={{ "width": "50%"}}
           type='text'
           placeholder="Please submit a 5-letter word"
           onChange={(e) => setSolution_word(e.target.value)}
           value={solution_word}
         ></Form.Control>
       </Form.Group>
-      <Button type="submit">create a new wordle!</Button>
+      <Button type="submit" style={{ "marginTop": "10px" }}>create a new wordle!</Button>
     </Form>
     
   )
