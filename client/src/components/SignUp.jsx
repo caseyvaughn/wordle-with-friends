@@ -23,7 +23,7 @@ export default function SignUp(props) {
       props.setCurrentUser(resp)
       navigate('/words')
     }}
-    style={{"padding": "30px", "text-align":"left"}}>
+    style={{"padding": "30px", "textAlign":"left"}}>
       <Form.Group>
         <Form.Label>username</Form.Label>
         <Form.Control
@@ -60,7 +60,7 @@ export default function SignUp(props) {
           placeholder ="confirm password"
         ></Form.Control>
       </Form.Group>
-      <Button style={{ "margin-top": "10px" }} type="submit">sign-up!</Button>
+      <Button style={{ "marginTop": "10px" }} type="submit">sign-up!</Button>
     </Form>
   )
 }

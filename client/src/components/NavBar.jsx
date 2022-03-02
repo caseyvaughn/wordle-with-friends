@@ -10,7 +10,7 @@ export default function NavBar(props) {
   return (
       <Navbar bg="light" expand={false} collapseOnSelect>
         <Container>
-          <Navbar.Brand href="/"> WordleWithFriends</Navbar.Brand>
+          <Navbar.Brand href="/words"> WordleWithFriends</Navbar.Brand>
           {props.currentUser ?
             <>
             <h5>Welcome back, {props.currentUser.username}!</h5>
