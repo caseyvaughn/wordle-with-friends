@@ -1,12 +1,11 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import { verifyUser } from './services/users';
 import SignUp from './components/SignUp'
 import Login from './components/Login';
 import NavBar from './components/NavBar';
 import WordsContainer from './containers/WordsContainer';
-import GamesContainer from './containers/GamesContainer';
 
 function App() {
    const [currentUser, setCurrentUser] = useState(null)
