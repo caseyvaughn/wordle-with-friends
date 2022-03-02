@@ -4,4 +4,4 @@ export const keys =[['q','w','e','r','t','y','u','i','o','p'],
 ]; 
                    
 //resource referenced for how to create keyboard:
-//https://www.youtube.com/watch?v=8u1AI3PZmyQ&t=627s
+//https://www.youtube.com/watch?v=t_omcJmOQ_k&t=27s

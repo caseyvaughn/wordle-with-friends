@@ -23,14 +23,7 @@ export default function Game(props) {
 
   useEffect(() => {
     if(!boardData || !boardData.solution){
-      let newBoardData={...boardData, "solution": word.solution_word,
-                                 "rowIndex":0,
-                                 "boardWords":[],
-                                 "boardRowStatus":[],
-                                 "presentCharArray":[],
-                                 "absentCharArray":[],
-                                 "correctCharArray":[],
-                                 "gameStatus":"IN_PROGRESS"}; 
+      let newBoardData={...boardData, "solution": word.solution_word, "rowIndex":0, "boardWords":[], "boardRowStatus":[], "presentCharArray":[], "absentCharArray":[], "correctCharArray":[], "gameStatus":"IN_PROGRESS"}; 
       setBoardData(newBoardData);                      
     }
   }, []);
@@ -79,14 +72,7 @@ export default function Game(props) {
     boardWords[rowIndex] = guessWord;
     
     //send updated board data to the board (send the react state)
-    let newBoardData={...boardData,
-                                "boardWords":boardWords,
-                                "boardRowStatus":boardRowStatus,
-                                "rowIndex":rowIndex+1,
-                                "gameStatus":gameStatus,
-                                "presentCharArray":presentCharArray,
-                                "absentCharArray":absentCharArray,
-                                "correctCharArray":correctCharArray};
+    let newBoardData={...boardData, "boardWords":boardWords, "boardRowStatus":boardRowStatus, "rowIndex":rowIndex+1, "gameStatus":gameStatus, "presentCharArray":presentCharArray, "absentCharArray":absentCharArray, "correctCharArray":correctCharArray};
     setBoardData(newBoardData);  
   }
 
