@@ -4,7 +4,6 @@ import { getOneWord } from "../../services/words"
 import Keyboard from "./Keyboard"
 import "./Game.css"
 import RatingsContainer from "../../containers/RatingsContainer"
-import RatingCreate from "../ RatingCreate"
 import LetterBoard from "./LetterBoard"
 
 export default function Game(props) {
@@ -35,7 +34,6 @@ export default function Game(props) {
       setBoardData(newBoardData);                      
     }
   }, []);
-  // console.log(boardData);
 
   //check each character of guessWord against solution; populate row status with the letter status
   const checkGuess = (guessWord, solution) => {
@@ -68,7 +66,7 @@ export default function Game(props) {
       }
     }
     
-    //logic for wongame final status
+    //logic for final game status
     if (wonGame) {
       gameStatus = "WIN";
       console.log(gameStatus)
@@ -128,16 +126,20 @@ export default function Game(props) {
   return (
     <div>
       {boardData && <> 
-
       <h4>solution word: {word.solution_word}</h4>
       {boardData?.gameStatus === "WIN" ?
-        <>
+          <>
           <h1>Congratulations, you won!</h1>
           <RatingsContainer currentUser = {props.currentUser}/>
-        </>
+          </>
         :
-        null}
-      
+          null}
+        {boardData?.gameStatus === "LOST" ?
+        <>  <h1>Better luck next time!</h1>
+            <h1>word #{word.id}: {word.solution_word}</h1>
+          </>
+          : null
+          }
       <div className='game-container'>
           <div className='title top'>WORDLE GAME #{word.id}</div>
           <LetterBoard boardData={boardData}/>
