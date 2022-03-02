@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react"
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { getOneWord } from "../../services/words"
 import Keyboard from "../Keyboard/Keyboard"
 import "./Game.css"

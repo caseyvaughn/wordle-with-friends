@@ -12,6 +12,7 @@ export const getOneWord = async (word_id) => {
 
 export const getRandomWord = async () => {
   const resp = await api.get()
+  return resp.data
 }
 
 export const createWord = async (wordData) => {
