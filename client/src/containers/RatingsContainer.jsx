@@ -9,23 +9,15 @@ export default function RatingsContainer(props) {
   const [ratings, setRatings] = useState([])
   const { id } = useParams()
   const [ratingID, setRatingID] = useState(undefined)
- 
   const [averageRating, setAverageRating] = useState(undefined)
-  
- 
-  
-  // console.log(ratings)
   
   useEffect(() => {
     const fetchRatings = async () => {
-      console.log(ratings)
       const fetchedRatings = await getWordRatings(id)
       setRatings(fetchedRatings)
       const userRating = fetchedRatings.find(r => r.user?.id === props.currentUser?.id)
       const difficulty = fetchedRatings.map(r => r.difficulty_rating)
       setAverageRating(difficulty.reduce((a, b) => a + b) / fetchedRatings.length)
-      console.log(difficulty)
-      console.log(averageRating)
       
       if (userRating) {
         setRatingID(userRating.id)

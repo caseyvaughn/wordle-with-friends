@@ -9,8 +9,6 @@ export default function GamesContainer(props) {
   const params = useParams()
   const word_id = params.id
   const game_id = params.game_id
-  console.log(params);
-  // const { id } = useParams();
   
   useEffect(() => {
     const fetchGame = async (word_id, game_id) => {
@@ -20,7 +18,6 @@ export default function GamesContainer(props) {
     }
     fetchGame(word_id, game_id)
   }, [word_id, game_id])
-  console.log(game.user_won)
 
   const handleCreate = async () => {
     await createGame()

@@ -3,7 +3,7 @@ import { Link, Routes, Route, useNavigate } from 'react-router-dom'
 import {getAllWords, getOneWord, createWord, deleteWord} from "../services/words"
 import WordCreate from "../screens/WordCreate"
 import Words from "../screens/Words"
-import WordDetail from "./WordDetail"
+import WordDetail from "../screens/WordDetail"
 import GamesContainer from "./GamesContainer"
 import Game from "../components/Game/Game"
 // client/src/components/Game/Game.jsx

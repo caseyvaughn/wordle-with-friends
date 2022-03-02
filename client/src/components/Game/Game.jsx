@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react"
 import { useParams, useNavigate } from 'react-router-dom'
 import { getOneWord } from "../../services/words"
-import Keyboard from "./Keyboard"
+import Keyboard from "../Keyboard/Keyboard"
 import "./Game.css"
 import RatingsContainer from "../../containers/RatingsContainer"
 import LetterBoard from "./LetterBoard"

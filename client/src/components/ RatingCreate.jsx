@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import RangeSlider from "react-bootstrap-range-slider"
+import { Link } from 'react-router-dom'
 //github page with react bootstrap rangeslider examples:
 //https://jaywilz.github.io/react-bootstrap-range-slider/
 
@@ -29,7 +30,9 @@ export default function RatingCreate(props) {
                 max={5}
               />
           </Form.Group>
-          <Button type="submit" >submit rating</Button>
+          <Link to="/words">
+            <Button type="submit" >submit rating</Button>
+          </Link>
         </Form>
         <p></p>
         
