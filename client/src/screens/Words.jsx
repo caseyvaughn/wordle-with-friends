@@ -16,11 +16,11 @@ export default function Words(props) {
                     <Card.Title className="word-info">Wordle #{word.id}</Card.Title>
                       <Card.Subtitle className="word-info mb-2 text-muted">Created by: {word.user.username}</Card.Subtitle>
                       <div className="dot-row">
-                        {[0, 1, 2, 3, 4].map(() => (
-                          <div className="dots">?</div>))}
+                        {[0, 1, 2, 3, 4].map((i) => (
+                          <div className="dots" key={i}>?</div>))}
                       </div>
-                      <Link key={word.id} to={`/words/${word.id}/newgame`}><Button size="sm" style={{margin:"5px"}}>play wordle!</Button></Link>
-                      <Link key={word.id} to={`/words/${word.id}`}><Button size="sm" style={{margin:"5px"}}>view details</Button></Link>
+                      <Link to={`/words/${word.id}/newgame`}><Button size="sm" style={{margin:"5px"}}>play wordle!</Button></Link>
+                      <Link to={`/words/${word.id}`}><Button size="sm" style={{margin:"5px"}}>view details</Button></Link>
                   </Card.Body>
                   </Card>
                   </div>

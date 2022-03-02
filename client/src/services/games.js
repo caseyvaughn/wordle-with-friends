@@ -12,6 +12,7 @@ export const getOneGame = async (word_id, game_id) => {
 
 export const getRandomGame = async () => {
   const resp = await api.get()
+  return resp.data
 }
 
 export const createGame = async (gameData) => {

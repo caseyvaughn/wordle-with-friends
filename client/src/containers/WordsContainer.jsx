@@ -1,12 +1,12 @@
 import { useState, useEffect} from "react"
-import { Link, Routes, Route, useNavigate } from 'react-router-dom'
-import {getAllWords, getOneWord, createWord, deleteWord} from "../services/words"
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import {getAllWords, createWord, deleteWord} from "../services/words"
 import WordCreate from "../screens/WordCreate"
 import Words from "../screens/Words"
-import WordDetail from "./WordDetail"
+import WordDetail from "../screens/WordDetail"
 import GamesContainer from "./GamesContainer"
 import Game from "../components/Game/Game"
-// client/src/components/Game/Game.jsx
+
 export default function WordsContainer(props) {
   const [words, setWords] = useState([])
   const [toggle, setToggle] = useState(false)
@@ -23,7 +23,6 @@ export default function WordsContainer(props) {
   const handleDelete = async (id) => {
     try {
       await deleteWord(id)
-      // setToggle(prevToggle => !prevToggle)
       navigate('/words')
     } catch (err) {
       console.log(err)
@@ -34,10 +33,6 @@ export default function WordsContainer(props) {
     const {id} = await createWord(formData)
     setToggle(prevToggle => !prevToggle)
     navigate(`/words/${id}`)
-    // const data = {id: 'value', info: 'whataver'}
-    // const id = data.id;
-    // const info = data.info;
-    // const { id, info } = data;
   }
   return ( 
     <div>

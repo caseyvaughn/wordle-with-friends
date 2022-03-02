@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import RangeSlider from "react-bootstrap-range-slider"
+import { Link } from 'react-router-dom'
 //github page with react bootstrap rangeslider examples:
 //https://jaywilz.github.io/react-bootstrap-range-slider/
 
@@ -20,12 +21,7 @@ export default function RatingCreate(props) {
           props.handleRatingCreate(rating)
         }}>
           <Form.Group>
-            <Form.Label>Please rate the word's difficulty easiest(1) to hardest (5)</Form.Label>
-            {/* <Form.Range
-              value={difficulty_rating}
-              onChange={e => setDifficulty_rating(e.target.value)}
-              min={1}
-              max={5}/> */}
+            <Form.Label>Please rate this word's difficulty (1=easiest, 5=hardest)</Form.Label>
             <p></p>
               <RangeSlider
                 value={difficulty_rating}
@@ -34,7 +30,9 @@ export default function RatingCreate(props) {
                 max={5}
               />
           </Form.Group>
-          <Button size="sm" type="submit" style={{"width":"20%"}}>submit rating</Button>
+          <Link to="/words">
+            <Button type="submit" >submit rating</Button>
+          </Link>
         </Form>
         <p></p>
         
