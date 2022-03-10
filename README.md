@@ -1,8 +1,9 @@
 # Wordle With Friends
 
 Wordle with Friends is a full-stack Wordle game clone that allows users to create a 5-letter mystery word that other users can attempt to solve in 6 guesses. After completing a Wordle game, users can rate the word's difficulty. 
-<br>
+
 Deployed site: https://wordle-with-friendz.netlify.app/
+
 Link to the original Wordle game (created by Josh Wardle): https://www.nytimes.com/games/wordle/index.html
 
 ## Technologies Used
