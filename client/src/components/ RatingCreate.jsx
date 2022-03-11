@@ -35,7 +35,7 @@ export default function RatingCreate(props) {
                 max={5}
               />
           </Form.Group>
-            <Button type="submit" variant="secondary" >submit rating</Button>
+            <Button type="submit" variant="secondary">submit rating</Button>
         </Form>
         <p></p>
         
