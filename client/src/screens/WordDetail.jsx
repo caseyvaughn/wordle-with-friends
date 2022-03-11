@@ -24,8 +24,9 @@ export default function WordDetail(props) {
           <Card.Subtitle className="word-info mb-2 text-muted">Created by: {word.user?.username}</Card.Subtitle>
           {props.currentUser?.id === word.user_id ?
             <>
-              <h1>{word.solution_word}</h1>
-              <Button onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
+              <h1 className="solution-word">{word.solution_word}</h1>
+              <h1>{props.averageRating}</h1>
+              <Button variant="danger" onClick={() => props.handleDelete(word.id)}>Delete Word</Button>
             </>
             :
             <Link to={`/words/${id}/newgame`}>
