@@ -12,7 +12,12 @@ export default function NavBar(props) {
       variant="light"
       expand="lg">
         <Container>
-          <Navbar.Brand href="/words"> WordleWithFriends</Navbar.Brand>
+        <Navbar.Brand
+          href="/words"
+          style={{fontSize: "2rem"}}
+          className="cabin gray">Wordle
+          <span className="yellow">With</span>
+          <span className="green">Friends</span> </Navbar.Brand>
           {props.currentUser ?
             <>
             <h5>Welcome back, {props.currentUser.username}!</h5>

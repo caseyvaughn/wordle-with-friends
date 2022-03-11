@@ -1,6 +1,25 @@
 .App {
   text-align: center;
 }
+.navbar-brand {
+  font-size: 2rem;
+}
+.cabin {
+  font-family: "Cabin", sans-serif;
+  font-weight: 800;
+}
+.gray {
+  color: #787c7e;
+}
+
+.yellow {
+  color: #ebc961;
+}
+
+.green {
+  color: #339966;
+}
+
 .form-control {
   width: 50%;
 }
