@@ -62,3 +62,13 @@ a:visited {
 button:hover {
   transform: scale(1.2);
 }
+.result-card {
+  width: 50%;
+  margin: 20px;
+  display: inline-block;
+}
+.solution-word {
+  margin: 10px;
+  color: #339966;
+  text-transform: uppercase;
+}
