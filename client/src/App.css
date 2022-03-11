@@ -1,6 +1,24 @@
 .App {
   text-align: center;
 }
+
+.cabin {
+  font-family: "Cabin", sans-serif;
+}
+
+.gray {
+  color: #787c7e;
+  font-weight: 800;
+}
+
+.yellow {
+  color: #ebc961;
+}
+
+.green {
+  color: #339966;
+}
+
 .form-control {
   width: 50%;
 }
@@ -25,13 +43,3 @@ a:visited {
   text-decoration: "none";
   color: black;
 }
-
-/* .navlink {
-  padding-left: 30px;
-  text-decoration: none;
-  color: black;
-}
-.dropdown {
-  display: flex;
-  margin: 20px 20px 20px 30px;
-} */
