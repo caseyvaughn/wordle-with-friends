@@ -123,6 +123,7 @@ export default function Game(props) {
         {boardData?.gameStatus === "LOST" ?
         <>  <h1>Better luck next time!</h1>
             <h1>word #{word.id}: {word.solution_word}</h1>
+            <RatingsContainer currentUser = {props.currentUser}/>
           </>
           : null
           }
