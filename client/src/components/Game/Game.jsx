@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react"
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { getOneWord } from "../../services/words"
 import Keyboard from "../Keyboard/Keyboard"
 import "./Game.css"
@@ -23,14 +23,7 @@ export default function Game(props) {
 
   useEffect(() => {
     if(!boardData || !boardData.solution){
-      let newBoardData={...boardData, "solution": word.solution_word,
-                                 "rowIndex":0,
-                                 "boardWords":[],
-                                 "boardRowStatus":[],
-                                 "presentCharArray":[],
-                                 "absentCharArray":[],
-                                 "correctCharArray":[],
-                                 "gameStatus":"IN_PROGRESS"}; 
+      let newBoardData={...boardData, "solution": word.solution_word, "rowIndex":0, "boardWords":[], "boardRowStatus":[], "presentCharArray":[], "absentCharArray":[], "correctCharArray":[], "gameStatus":"IN_PROGRESS"}; 
       setBoardData(newBoardData);                      
     }
   }, []);
@@ -79,14 +72,7 @@ export default function Game(props) {
     boardWords[rowIndex] = guessWord;
     
     //send updated board data to the board (send the react state)
-    let newBoardData={...boardData,
-                                "boardWords":boardWords,
-                                "boardRowStatus":boardRowStatus,
-                                "rowIndex":rowIndex+1,
-                                "gameStatus":gameStatus,
-                                "presentCharArray":presentCharArray,
-                                "absentCharArray":absentCharArray,
-                                "correctCharArray":correctCharArray};
+    let newBoardData={...boardData, "boardWords":boardWords, "boardRowStatus":boardRowStatus, "rowIndex":rowIndex+1, "gameStatus":gameStatus, "presentCharArray":presentCharArray, "absentCharArray":absentCharArray, "correctCharArray":correctCharArray};
     setBoardData(newBoardData);  
   }
 
@@ -126,7 +112,7 @@ export default function Game(props) {
   return (
     <div>
       {boardData && <> 
-      <h4>solution word: {word.solution_word}</h4>
+      {/* <h4>solution word: {word.solution_word}</h4> */}
       {boardData?.gameStatus === "WIN" ?
           <>
           <h1>Congratulations, you won!</h1>
@@ -137,6 +123,7 @@ export default function Game(props) {
         {boardData?.gameStatus === "LOST" ?
         <>  <h1>Better luck next time!</h1>
             <h1>word #{word.id}: {word.solution_word}</h1>
+            <RatingsContainer currentUser = {props.currentUser}/>
           </>
           : null
           }
