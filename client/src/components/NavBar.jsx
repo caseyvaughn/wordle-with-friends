@@ -37,8 +37,8 @@ export default function NavBar(props) {
                       </>
                       :
                       <>
-                        <NavLink style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/login">login</NavLink> <br/>
-                        <NavLink style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/signup">signup</NavLink>
+                        <NavLink className="custom-nav-link" style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/login">login</NavLink>
+                        <NavLink className="custom-nav-link" style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/signup">signup</NavLink>
                       </>}
             </Nav>
         </Navbar.Collapse>
