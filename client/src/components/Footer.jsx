@@ -5,7 +5,7 @@ import wordle from "../assets/wordle.png"
 
 export default function Footer() {
   return (
-    <div style={{display:"flex", justifyContent:"center", marginBottom:"20px"}}>
+    <div className="bg-light" style={{display:"flex", justifyContent:"center", marginBottom:"20px", padding:"10px"}}>
       <a href="https://www.nytimes.com/games/wordle/index.html">
         <img className="icon" src={wordle} alt="wordle logo"/>
       </a>
