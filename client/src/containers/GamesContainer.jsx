@@ -1,11 +1,11 @@
 import { useState, useEffect} from "react"
-import { useParams, useNavigate } from 'react-router-dom'
-import { getOneGame, createGame } from "../services/games"
+import { useParams} from 'react-router-dom'
+import { getOneGame} from "../services/games"
 
 
 export default function GamesContainer(props) {
   const [game, setGame] = useState([])
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const params = useParams()
   const word_id = params.id
   const game_id = params.game_id
@@ -19,10 +19,10 @@ export default function GamesContainer(props) {
     fetchGame(word_id, game_id)
   }, [word_id, game_id])
 
-  const handleCreate = async () => {
-    await createGame()
-    console.log("handleCreate")
-  }
+  // const handleCreate = async () => {
+  //   await createGame()
+  //   console.log("handleCreate")
+  // }
 
   return (
     <div>

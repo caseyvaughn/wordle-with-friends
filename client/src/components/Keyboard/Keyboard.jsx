@@ -13,7 +13,7 @@ export default function Keyboard({ boardData, handleKeyboard }) {
             handleKeyboard(key.key.toUpperCase())
     }
   useEffect(() => {          
-      //using .addEventListener to link the keyboard 
+      //need to use .addEventListener to link to the keyboard
         window.addEventListener("keydown", handleKey)
         return () => { window.removeEventListener("keydown", handleKey) }
     }, [handleKeyboard])
@@ -28,7 +28,7 @@ export default function Keyboard({ boardData, handleKeyboard }) {
           {item.map((key, keyIndex) => { 
             return (
               <button key={keyIndex}
-                // className={"key-correct"}
+                // conditionally style the buttons based on if key is in the correct, present, or absent array
                 className={`key-button
                   ${boardData.correctCharArray.includes(key) ? "key-correct" :
                             (boardData.presentCharArray.includes(key) ? "key-present" :
@@ -42,7 +42,6 @@ export default function Keyboard({ boardData, handleKeyboard }) {
         }
         </div>
       })}
-
       </div>
       </div>
   )

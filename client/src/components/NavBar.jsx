@@ -34,6 +34,7 @@ export default function NavBar(props) {
                         <NavLink style={{ textDecoration: "none", fontSize:"1.2rem", display:"flex", justifyContent:"right" }} to="/words/create">create a wordle</NavLink>
                         <NavLink style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/words">browse all wordles</NavLink>
                 <Button style={{ width: "75px" }} onClick={props.logout}>logout</Button>
+
                       </>
                       :
                       <>
