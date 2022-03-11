@@ -5,6 +5,8 @@ import Keyboard from "../Keyboard/Keyboard"
 import "./Game.css"
 import RatingsContainer from "../../containers/RatingsContainer"
 import LetterBoard from "./LetterBoard"
+import Card from 'react-bootstrap/Card'
+import Button from "react-bootstrap/esm/Button"
 
 export default function Game(props) {
   //fetch the solution word the user is guessing against 
@@ -112,21 +114,30 @@ export default function Game(props) {
   return (
     <div>
       {boardData && <> 
-      {/* <h4>solution word: {word.solution_word}</h4> */}
       {boardData?.gameStatus === "WIN" ?
           <>
-          <h1>Congratulations, you won!</h1>
-          <RatingsContainer currentUser = {props.currentUser}/>
+            <Card border="success" className="result-card" style={{display:"inline-block"}}>
+              <Card.Header>Congratulations, you won!</Card.Header>
+              <Card.Text>
+              <RatingsContainer currentUser = {props.currentUser}/>
+              </Card.Text>
+          </Card>
           </>
         :
           null}
         {boardData?.gameStatus === "LOST" ?
-        <>  <h1>Better luck next time!</h1>
-            <h1>word #{word.id}: {word.solution_word}</h1>
-            <RatingsContainer currentUser = {props.currentUser}/>
+          <>
+              <Card border="danger" className="result-card" style={{display:"inline-block"}}>
+              <Card.Header>Better luck next wordle!</Card.Header>
+              <Card.Text>
+                
+                <h1 className="solution-word">{word.solution_word}</h1>
+              <RatingsContainer currentUser = {props.currentUser}/>
+              </Card.Text>
+          </Card>
           </>
           : null
-          }
+        }
       <div className='game-container'>
           <div className='title top'>WORDLE GAME #{word.id}</div>
           <LetterBoard boardData={boardData}/>
