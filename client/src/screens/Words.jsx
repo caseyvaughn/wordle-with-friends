@@ -19,7 +19,7 @@ export default function Words(props) {
                         {[0, 1, 2, 3, 4].map((i) => (
                           <div className="dots" key={i}>?</div>))}
                       </div>
-                      <Link to={`/words/${word.id}/newgame`}><Button size="sm" style={{margin:"5px"}}>play wordle!</Button></Link>
+                      <Link to={`/words/${word.id}/newgame`}><Button variant="success" size="sm" style={{margin:"5px"}}>play wordle!</Button></Link>
                       <Link to={`/words/${word.id}`}><Button size="sm" style={{margin:"5px"}}>view details</Button></Link>
                   </Card.Body>
                   </Card>
