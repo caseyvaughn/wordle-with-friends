@@ -2,7 +2,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Button from 'react-bootstrap/esm/Button'
 import Container from "react-bootstrap/esm/Container"
-import { NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+
 
 export default function NavBar(props) {
  
@@ -26,18 +27,18 @@ export default function NavBar(props) {
         
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="responsive-navbar" >
-        <Nav className="mr-auto">
+        <Nav className="mr-auto justify-content-end">
                 
               {props.currentUser ?
                       <>
-                        <NavLink to="/words/create">create a wordle</NavLink>
-                        <NavLink to="/words">browse all wordles</NavLink>
-                        <Button onClick={props.logout}>logout</Button>
+                        <NavLink style={{ textDecoration: "none", fontSize:"1.2rem", display:"flex", justifyContent:"right" }} to="/words/create">create a wordle</NavLink>
+                        <NavLink style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/words">browse all wordles</NavLink>
+                <Button style={{ width: "75px" }} onClick={props.logout}>logout</Button>
                       </>
                       :
                       <>
-                        <NavLink to="/login">login</NavLink> <br/>
-                        <NavLink to="/signup">signup</NavLink>
+                <NavLink style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/login">login</NavLink> <br/>
+                        <NavLink style={{ textDecoration: "none", fontSize:"1.2rem" }} to="/signup">signup</NavLink>
                       </>}
             </Nav>
         </Navbar.Collapse>
