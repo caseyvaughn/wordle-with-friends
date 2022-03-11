@@ -72,3 +72,12 @@ button:hover {
   color: #339966;
   text-transform: uppercase;
 }
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.custom-form {
+  border: 3px solid #339966;
+  border-radius: 15%;
+}

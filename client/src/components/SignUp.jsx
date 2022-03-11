@@ -12,7 +12,8 @@ export default function SignUp(props) {
   const navigate = useNavigate()
 
   return (
-    <Form onSubmit={async (e) => {
+    <div className="form-wrapper">
+    <Form className="custom-form" onSubmit={async (e) => {
       e.preventDefault()
       const user = {
         username,
@@ -27,7 +28,6 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>username</Form.Label>
         <Form.Control
-          style={{ "width": "50%"}}
           type='text'
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
@@ -37,7 +37,6 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>email</Form.Label>
         <Form.Control
-          style={{ "width": "50%"}}
           type='text'
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -46,7 +45,6 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>password</Form.Label>
         <Form.Control
-          style={{ "width": "50%"}}
           type='password'
           placeholder ="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -55,12 +53,12 @@ export default function SignUp(props) {
       <Form.Group>
         <Form.Label>confirm password</Form.Label>
         <Form.Control
-          style={{ "width": "50%"}}
           type='password'
           placeholder ="confirm password"
         ></Form.Control>
       </Form.Group>
-      <Button style={{ "marginTop": "10px" }} type="submit">sign-up!</Button>
-    </Form>
+      <Button variant="success" style={{ "marginTop": "10px" }} type="submit">sign-up!</Button>
+      </Form>
+      </div>
   )
 }
