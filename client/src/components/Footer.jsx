@@ -5,7 +5,7 @@ export default function Footer() {
     <div>
       <h1>Casey Vaughn</h1>
       <h1>LinkedIn</h1>
-      <h1>Casey Vaughn 2022</h1>
+      <h1 className="cabin">Casey Vaughn 2022</h1>
     </div>
   )
 }
