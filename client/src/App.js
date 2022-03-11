@@ -6,6 +6,7 @@ import SignUp from './components/SignUp'
 import Login from './components/Login';
 import NavBar from './components/NavBar';
 import WordsContainer from './containers/WordsContainer';
+import Footer from './components/Footer';
 
 function App() {
    const [currentUser, setCurrentUser] = useState(null)
@@ -32,8 +33,8 @@ function App() {
         <Route path="/signup" element={<SignUp setCurrentUser={setCurrentUser} />} />
         {/* <Route path='/words/:word_id/games/*' element={<GamesContainer currentUser={currentUser}/>} /> */}
         <Route path='/words/*' element={<WordsContainer currentUser={currentUser} />} />
- 
       </Routes>
+      <Footer/>
     </div>
   );
 }
