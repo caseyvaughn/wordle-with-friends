@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom'
 import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import "./Words.css"
+import WelcomeMessage from '../components/WelcomeMessage';
 
 export default function Words(props) {
   return (
     <div>
+      <div style={{display:"flex", justifyContent:"center"}}>
+        <WelcomeMessage />
+        </div>
       <Container className="grid" >
         <Row>
           {props.words.map(word => {
