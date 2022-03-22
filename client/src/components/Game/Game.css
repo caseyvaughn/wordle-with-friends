@@ -62,6 +62,12 @@
   background: #787c7e;
   color: #fff;
 }
+.dot {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  display: inline-flex;
+}
 
 @media only screen and (max-width: 570px) {
   .letter {

@@ -7,6 +7,7 @@ import RatingsContainer from "../../containers/RatingsContainer"
 import LetterBoard from "./LetterBoard"
 import Card from 'react-bootstrap/Card'
 import Button from "react-bootstrap/esm/Button"
+import GameInstructions from "../GameInstructions"
 
 export default function Game(props) {
   //fetch the solution word the user is guessing against 
@@ -113,6 +114,7 @@ export default function Game(props) {
 
   return (
     <div>
+      <GameInstructions/>
       {boardData && <> 
       {boardData?.gameStatus === "WIN" ?
           <>
